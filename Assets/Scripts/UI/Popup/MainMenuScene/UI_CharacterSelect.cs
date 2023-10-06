@@ -60,8 +60,6 @@ public class UI_CharacterSelect : UI_Popup
         //PlayerInven Create
         foreach (KeyValuePair<int, Data.Player> kv in playerData)
         {
-            if (kv.Key > 2)
-                break;
             GameObject go = Managers.Resource.Instantiate("UI/SubItem/PlayerInven", parent: gridPanel.transform);
             go.FindChild<Image>("PlayerImg", true).sprite = Managers.Resource.LoadSprite(kv.Value.name);
             go.GetOrAddComponent<PlayerInven>().player = kv.Value;
