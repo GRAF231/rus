@@ -12,7 +12,7 @@ public class PlayerController : BaseController
     [SerializeField] public Vector2 _lastDirVec = new Vector2(1, 0);
     bool _isDamaged = false;
     float _invincibility_time = 0.2f;
-
+    Joystick _joystick;
     Slider _slider;
 
     protected override void Init()
@@ -24,13 +24,33 @@ public class PlayerController : BaseController
         _type = Define.WorldObject.Player;
         if (gameObject.GetComponentInChildren<UI_HPBar>() == null)
             Managers.UI.MakeWorldSpaceUI<UI_HPBar>(transform, "UI_HPBar");
+
+        _joystick = GameObject.FindWithTag("Joystick").GetComponent<Joystick>();
     }
     
 
     void Update()
     {
-        _inputVec.x = Input.GetAxisRaw("Horizontal");
-        _inputVec.y = Input.GetAxisRaw("Vertical");
+         if (_joystick.Horizontal > 0.1f || _joystick.Horizontal < -0.1f)
+         {
+             _inputVec.x = _joystick.Horizontal;
+         }
+         else 
+         {
+             _inputVec.x = Input.GetAxisRaw("Horizontal");
+         }
+
+         if (_joystick.Vertical > 0.1f || _joystick.Vertical < -0.1f)
+         {
+             _inputVec.y = _joystick.Vertical;
+         }
+         else
+         {
+             _inputVec.y = Input.GetAxisRaw("Vertical");
+         } 
+        //_inputVec.x = Input.GetAxisRaw("Horizontal");
+       // _inputVec.y = Input.GetAxisRaw("Vertical");
+
     }
 
     private void FixedUpdate()

@@ -15,6 +15,7 @@ TagManager:
   - WeaponController
   - WorldUI
   - Weapon
+  - Joystick
   layers:
   - Default
   - TransparentFX
