@@ -1,9 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class Util
 {
+
+
+    [DllImport("__Internal")]
+    private static extern bool IsMobile();
+
+    public static bool isMobile()
+    {
+#if !UNITY_EDITOR && UNITY_WEBGL
+        return IsMobile();
+#endif
+        return false;
+    }
+
     public static T GetOrAddComponent<T>(GameObject go) where T: UnityEngine.Component
     {
         T component = go.GetComponent<T>();

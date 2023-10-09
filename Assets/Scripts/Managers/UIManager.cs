@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -30,7 +31,7 @@ public class UIManager
         else
             canvas.sortingOrder = 0;
     }
-    
+
     public T MakeWorldSpaceUI<T>(Transform parent, string name = null) where T : UI_Base
     {
         if (string.IsNullOrEmpty(name))
@@ -54,7 +55,7 @@ public class UIManager
         if (string.IsNullOrEmpty(name))
             name = typeof(T).Name;
 
-        GameObject go = Managers.Resource.Instantiate($"UI/SubItem/{name}");
+        GameObject go = Managers.Resource.Instantiate($"UI/SubItem/{name}{(Util.isMobile() ? "_touch" : "")}");
 
         if(parent != null)
             go.transform.SetParent(parent);
