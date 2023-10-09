@@ -1,18 +1,8 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public class NewMonoBehaviour : MonoBehaviour
-{
-	// Use this for initialization
-	void Start()
-	{
-
-	}
-
-	// Update is called once per frame
-	void Update()
-	{
-			
-	}
-}
-
+﻿var MyPlugin = {
+   IsMobile: function()
+   {
+alert('123');
+      return UnityLoader.SystemInfo.mobile;
+   }
+};  
+mergeInto(LibraryManager.library, MyPlugin);

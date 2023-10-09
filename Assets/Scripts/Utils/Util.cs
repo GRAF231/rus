@@ -8,12 +8,12 @@ public class Util
 
 
     [DllImport("__Internal")]
-    private static extern bool IsMobile();
+    private static extern bool IsMobileExtern();
 
-    public static bool isMobile()
+    public static bool IsMobile()
     {
 #if !UNITY_EDITOR && UNITY_WEBGL
-        return IsMobile();
+        return IsMobileExtern();
 #endif
         return false;
     }

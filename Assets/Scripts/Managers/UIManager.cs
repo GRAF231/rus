@@ -55,7 +55,7 @@ public class UIManager
         if (string.IsNullOrEmpty(name))
             name = typeof(T).Name;
 
-        GameObject go = Managers.Resource.Instantiate($"UI/SubItem/{name}{(Util.isMobile() ? "_touch" : "")}");
+        GameObject go = Managers.Resource.Instantiate($"UI/SubItem/{name}{(Util.IsMobile() ? "_touch" : "")}");
 
         if(parent != null)
             go.transform.SetParent(parent);
