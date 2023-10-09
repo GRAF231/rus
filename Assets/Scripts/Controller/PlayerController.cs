@@ -11,6 +11,7 @@ public class PlayerController : BaseController
     [SerializeField] Vector2 _inputVec;
     [SerializeField] public Vector2 _lastDirVec = new Vector2(1, 0);
     bool _isDamaged = false;
+    bool _isMobile = false;
     float _invincibility_time = 0.2f;
     Joystick _joystick;
     Slider _slider;
@@ -25,31 +26,42 @@ public class PlayerController : BaseController
         if (gameObject.GetComponentInChildren<UI_HPBar>() == null)
             Managers.UI.MakeWorldSpaceUI<UI_HPBar>(transform, "UI_HPBar");
 
-        _joystick = GameObject.FindWithTag("Joystick").GetComponent<Joystick>();
+        _isMobile = Util.isMobile();
+
+        if (_isMobile)
+        {
+            _joystick = GameObject.FindWithTag("Joystick").GetComponent<Joystick>();
+        }
     }
     
 
     void Update()
     {
-         if (_joystick.Horizontal > 0.1f || _joystick.Horizontal < -0.1f)
-         {
-             _inputVec.x = _joystick.Horizontal;
-         }
-         else 
-         {
-             _inputVec.x = Input.GetAxisRaw("Horizontal");
-         }
+        if (_isMobile)
+        {
+            if (_joystick.Horizontal > 0.1f || _joystick.Horizontal < -0.1f)
+            {
+                _inputVec.x = _joystick.Horizontal;
+            }
+            else
+            {
+                _inputVec.x = Input.GetAxisRaw("Horizontal");
+            }
 
-         if (_joystick.Vertical > 0.1f || _joystick.Vertical < -0.1f)
-         {
-             _inputVec.y = _joystick.Vertical;
-         }
-         else
-         {
-             _inputVec.y = Input.GetAxisRaw("Vertical");
-         } 
-        //_inputVec.x = Input.GetAxisRaw("Horizontal");
-       // _inputVec.y = Input.GetAxisRaw("Vertical");
+            if (_joystick.Vertical > 0.1f || _joystick.Vertical < -0.1f)
+            {
+                _inputVec.y = _joystick.Vertical;
+            }
+            else
+            {
+                _inputVec.y = Input.GetAxisRaw("Vertical");
+            }
+        }
+        else
+        {
+            _inputVec.x = Input.GetAxisRaw("Horizontal");
+            _inputVec.y = Input.GetAxisRaw("Vertical");
+        }
 
     }
 
