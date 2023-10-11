@@ -14,8 +14,6 @@ public class CameraController : MonoBehaviour
 
     public void Start()
     {
-        UnityEngine.Debug.Log("Her1");
-
         camera = gameObject.GetComponent<PixelPerfectCamera>();
         if (Util.isMobile())
         {
