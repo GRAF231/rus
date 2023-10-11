@@ -10,7 +10,7 @@ public class PlayerController : BaseController
     public RuntimeAnimatorController animeCon;
     public Sprite[] playerSprites;
     [SerializeField] Vector2 _inputVec;
-    [SerializeField] SpriteRenderer _viewSpriteRenderer;
+    public SpriteRenderer _viewSpriteRenderer;
     [SerializeField] Animator _viewAnimator;
     [SerializeField] public Vector2 _lastDirVec = new Vector2(1, 0);
     bool _isDamaged = false;
@@ -81,11 +81,17 @@ public class PlayerController : BaseController
     private void LateUpdate()
     {
         _viewAnimator.SetFloat("speed", _inputVec.magnitude);
+ 
+    }
+    public void DirectionFlipX()
+    {
         if (_inputVec.x != 0)
         {
             _viewSpriteRenderer.flipX = (_inputVec.x < 0) ? false : true;
         }
     }
+
+
     public void Init(Data.Player playerData)
     {
         _viewSpriteRenderer.sprite = playerSprites[playerData.id - 1];

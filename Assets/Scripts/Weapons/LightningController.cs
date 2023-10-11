@@ -13,10 +13,16 @@ public class LightningController : WeaponController
     private GameObject _playerUI = null;
     Image _image_skill;
 
+    private PlayerController _playerController;
     private Vector2 lastEnemyPos;
     private List<GameObject> nearbyEnemies = new List<GameObject>();
 
     public override int _weaponType { get { return (int)Define.Weapons.Lightning; } }
+
+    void Start()
+    {
+        _playerController = _player.GetComponent<PlayerController>();
+    }
 
     protected override void SetWeaponStat()
     {
@@ -73,13 +79,14 @@ public class LightningController : WeaponController
     {
         if (nearbyEnemies.Count() == 0)
         {
+            //_playerController.DirectionFlipX();
             return _player.transform.position;
         }
         //Sort Enemies by distance to Weapon
         nearbyEnemies = nearbyEnemies.OrderBy(
             x => Vector2.Distance(this.transform.position, x.transform.position))
             .ToList();
-
+        _playerController._viewSpriteRenderer.flipX = nearbyEnemies[0].transform.position.x > _player.transform.position.x;
         return nearbyEnemies[0].transform.position;
     }
 

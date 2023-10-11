@@ -10,14 +10,22 @@ using Random = UnityEngine.Random;
 public class ShotgunController : WeaponController
 {
     [SerializeField] private GameObject gunhole;
-    
+
+    public GameObject shotgun;
+
+    private PlayerController _playerController;
     private List<GameObject> nearbyEnemies = new List<GameObject>();
-    private Vector2 lastEnemyPos = new Vector2(0, 0);
+    private Vector2 lastEnemyPos = new Vector2(0, 0); 
 
     private bool _isCool = false;
     private float _bulletTargetRange = 60f;
 
     public override int _weaponType { get { return (int)Define.Weapons.Shotgun; } }
+
+    void Start()
+    {
+        _playerController = _player.GetComponent<PlayerController>();
+    }
 
     void Update()
     {
@@ -25,7 +33,7 @@ public class ShotgunController : WeaponController
         {
             return;
         }
-        transform.rotation = Quaternion.Slerp(transform.rotation,
+        shotgun.transform.rotation = Quaternion.Slerp(shotgun.transform.rotation,
             Quaternion.AngleAxis(SetAngleFromHandToNearbyEnemy(), Vector3.forward), 10f * Time.deltaTime);
         if (!_isCool)
         {
@@ -80,6 +88,7 @@ public class ShotgunController : WeaponController
         else
         {
             dirVec = lastEnemyPos;
+            _playerController.DirectionFlipX();
         }
         dirVec = (dirVec - transform.position).normalized;
         return Mathf.Atan2(dirVec.y, dirVec.x) * Mathf.Rad2Deg;
@@ -103,6 +112,7 @@ public class ShotgunController : WeaponController
             .ToList();
 
         lastEnemyPos = nearbyEnemies[0].transform.position;
+        _playerController._viewSpriteRenderer.flipX = lastEnemyPos.x > _player.transform.position.x;
         return lastEnemyPos;
     }
 
