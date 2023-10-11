@@ -1,0 +1,34 @@
+{
+    "playerStats": [
+        {
+            "statID": "1",
+            "statName": "MaxHP",
+            "statDesc": "MaxHP"
+        },
+        {
+            "statID": "2",
+            "statName": "MoveSpeed",
+            "statDesc": "MoveSpeed"
+        },
+        {
+            "statID": "3",
+            "statName": "Damage",
+            "statDesc": "Damage"
+        },
+        {
+            "statID": "4",
+            "statName": "Defense",
+            "statDesc": "Defense"
+        },
+        {
+            "statID": "5",
+            "statName": "Cooldown",
+            "statDesc": "Cooldown"
+        },
+        {
+            "statID": "6",
+            "statName": "Amount",
+            "statDesc": "Amount"
+        }
+    ]
+}

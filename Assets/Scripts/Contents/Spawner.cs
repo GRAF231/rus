@@ -6,13 +6,13 @@ public class Spawner : MonoBehaviour
 {
     Dictionary<int, Data.Monster> monsterStat = new Dictionary<int, Data.Monster>();
     public Transform[] spawnPoint;
-    float _spawnTime = 0.5f;
+    float _spawnTime = 0.3f;
     bool _isSpawning = false;
     [SerializeField]
     GameObject[] _spawnUnit;
 
     [SerializeField]
-    int _maxSpawnUnit = 50;
+    int _maxSpawnUnit = 80;
 
     public int enemyCount = 0;
     int timeLevel = 0;

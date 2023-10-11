@@ -46,9 +46,9 @@ public class UpgdPanel : UI_Base
         Get<TextMeshProUGUI>((int)Texts.UpgdDescText).text = desc;
     }
 
-    internal void SetData(string[] data)
+    internal void SetData(EventManager.ItemInfo data)
     {
-        itemType = Int32.Parse(data[0]);
-        itemName = data[1];
+        itemType = data.Type;
+        itemName = data.Name;
     }
 }
