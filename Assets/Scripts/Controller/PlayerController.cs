@@ -82,7 +82,7 @@ public class PlayerController : BaseController
         _anime.SetFloat("speed", _inputVec.magnitude);
         if (_inputVec.x != 0)
         {
-            _sprite.flipX = (_inputVec.x < 0) ? true : false;
+            _sprite.flipX = (_inputVec.x < 0) ? false : true;
         }
     }
     public void Init(Data.Player playerData)

@@ -40,7 +40,7 @@ public class UIManager
         GameObject go = Managers.Resource.Instantiate($"UI/WorldSpace/{name}");
 
         if (parent != null)
-            go.transform.SetParent(parent);
+            go.transform.SetParent(parent, false);
 
         Canvas canvas = go.GetComponent<Canvas>();
         canvas.renderMode = RenderMode.WorldSpace;
@@ -58,7 +58,7 @@ public class UIManager
         GameObject go = Managers.Resource.Instantiate($"UI/SubItem/{name}");
 
         if(parent != null)
-            go.transform.SetParent(parent);
+            go.transform.SetParent(parent, false);
 
         return go.GetOrAddComponent<T>();
     }
@@ -75,7 +75,7 @@ public class UIManager
         _sceneUI = sceneUI;
 
 
-        go.transform.SetParent(Root().transform);
+        go.transform.SetParent(Root().transform, false);
         return sceneUI;
     }
     public UI_Scene getSceneUI()
@@ -92,7 +92,7 @@ public class UIManager
 
         GameObject go = Managers.Resource.Instantiate($"UI/Popup/{name}");
         
-        go.transform.SetParent(Root().transform);
+        go.transform.SetParent(Root().transform, false);
         
         T popup =  go.GetOrAddComponent<T>();
         Define.PopupUIGroup popupType = popup._popupID;
