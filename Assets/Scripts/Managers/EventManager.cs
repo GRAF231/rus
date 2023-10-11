@@ -2,27 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using static Define;
 
 public class EventManager
 {
-    public enum PlayerStats
+    public struct ItemInfo
     {
-        MaxHP,
-        MoveSpeed,
-        Damage,
-        Defense,
-        Cooldown,
-        Amount
+        public int Type { get; set; }
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string Desc { get; set; }
     }
 
-
-    public List<string[]> SetRandomItem(PlayerStat player, int Maxcount)
+    public List<ItemInfo> SetRandomItem(PlayerStat player, int Maxcount)
     {
         int i = 0;
-        List<string[]> PoolList = new List<string[]>();
+        List<ItemInfo> PoolList = new List<ItemInfo>();
         while(i < Maxcount)
         {
-            string[] selected = new string[2];
+            ItemInfo selected;
             float random = Random.Range(0, 100);
             int rd = 0;
 
@@ -39,32 +37,48 @@ public class EventManager
             {
                 if (player.GetWeaponDict()[player.playerStartWeapon] >= 5)
                     continue;
-                selected[0] = "0";
-                selected[1] = player.playerStartWeapon.ToString();
+
+                var weapon = Managers.Data.WeaponData[(int)player.playerStartWeapon];
+                selected = new ItemInfo {
+                    Type = 0,
+                    ID = weapon.weaponID,
+                    Name = weapon.weaponName,
+                    Desc = weapon.weaponDesc,
+                };
             }
             else if (rd == 1)
             {
-                selected[0] = "1";
-                PlayerStats stat = SetRandomStat();
-                selected[1] = stat.ToString();
+                Data.PlayerStatData stat = SetRandomStat();
+                selected = new ItemInfo
+                {
+                    Type = 1,
+                    ID = stat.statID,
+                    Name = stat.statName,
+                    Desc = stat.statDesc,
+                };
             }
             else
             {
-                selected[0] = "2";
-                Define.Weapons weapon = SetRandomWeapon();
-                if (player.GetWeaponDict().GetValueOrDefault<Define.Weapons, int>(weapon) >= 5)
+                var weapon = Managers.Data.WeaponData[(int)SetRandomWeapon()];
+                selected = new ItemInfo
+                {
+                    Type = 2,
+                    ID = weapon.weaponID,
+                    Name = weapon.weaponName,
+                    Desc = weapon.weaponDesc,
+                };
+                if (player.GetWeaponDict().GetValueOrDefault<Define.Weapons, int>((Define.Weapons)weapon.weaponID) >= 5)
                     continue;
-                if (player.GetWeaponDict().Count >= 4 && !player.GetWeaponDict().ContainsKey(weapon))
+                if (player.GetWeaponDict().Count >= 4 && !player.GetWeaponDict().ContainsKey((Define.Weapons)weapon.weaponID))
                     continue;
-                selected[1] = weapon.ToString();
             }
 
             bool isContains = false;
-            foreach (string[] type in PoolList)
+            foreach (ItemInfo item in PoolList)
             {
-                if(selected[1] == type[1])
+                if(selected.Type == item.Type)
                 {
-                    Debug.Log($"{type[1]} is already contained");
+                    Debug.Log($"{item.Type} is already contained");
                     isContains = true;
                     break;
                 }
@@ -77,10 +91,11 @@ public class EventManager
         return PoolList;
     }
 
-    public PlayerStats SetRandomStat()
+    public Data.PlayerStatData SetRandomStat()
     {
-        int _statNum = Random.Range(0, System.Enum.GetValues(typeof(PlayerStats)).Length);
-        PlayerStats playerStats = (PlayerStats)_statNum;
+        int _statNum = Random.Range(0, Managers.Data.PlayerStatData.Count);
+        Debug.Log(Managers.Data.PlayerStatData.Count);
+        Data.PlayerStatData playerStats = Managers.Data.PlayerStatData[_statNum];
         return playerStats;
     }
 
@@ -100,10 +115,10 @@ public class EventManager
         {
             item = Managers.Resource.Instantiate("Content/Box");
         }
-        else if (rand < 8)
+        else if (rand < 4)
         {
             int rd = Random.Range(1, 11);
-            if (rd < 7)
+            if (rd < 6)
             {
                 item = Managers.Resource.Instantiate("Content/Health");
             }

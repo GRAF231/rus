@@ -90,7 +90,7 @@ public class UIManager
         if (string.IsNullOrEmpty(name))
             name = typeof(T).Name;
 
-        GameObject go = Managers.Resource.Instantiate($"UI/Popup/{name}");
+        GameObject go = Managers.Resource.Instantiate(Util.isMobile() ? $"UI/Popup/{name}_touch" : $"UI/Popup/{name}");
         
         go.transform.SetParent(Root().transform, false);
         

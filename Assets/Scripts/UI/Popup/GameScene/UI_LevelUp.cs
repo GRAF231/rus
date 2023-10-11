@@ -30,22 +30,19 @@ public class UI_LevelUp : UI_Popup
             Managers.Resource.Destroy(child.gameObject);
         }
         PlayerStat player = Managers.Game.getPlayer().GetOrAddComponent<PlayerStat>();
-        List<string[]> itemList = Managers.Event.SetRandomItem(player, 3);
-        for(int i = 0; i<itemList.Count; i++) 
+        List<EventManager.ItemInfo> itemList = Managers.Event.SetRandomItem(player, 3);
+        for(int i = 0; i<itemList.Count; i++)
         {
-            Debug.Log($"Item{i + 1}  : {itemList[i][1]}");
+            Debug.Log($"Item{i + 1}  : {itemList[i].Name}, {itemList[i].ID}");
         }
 
-        //here we choose stat or weapon random number.
-        string title = "패널 테스트";
-        string desc = "패널 설명 테스트";
         for(int i = 0; i< MaxUpgradeNum; i++)
         {
             GameObject upgradePanel = Managers.UI.MakeSubItem<UpgdPanel>(parent:gridPanel.transform).gameObject;
             UpgdPanel upgradeDesc = upgradePanel.GetOrAddComponent<UpgdPanel>();
             upgradeDesc.SetData(itemList[i]);
-            title = itemList[i][1];
-            desc = itemList[i][1];
+            var title = itemList[i].Name;
+            var desc = itemList[i].Desc;
             upgradeDesc.SetInfo(title, desc);
         }
     }

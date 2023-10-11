@@ -72,6 +72,7 @@ namespace Data
     {
         public int weaponID;
         public string weaponName;
+        public string weaponDesc;
         public List<WeaponLevelData> weaponLevelData = new List<WeaponLevelData>();
 
 	}
@@ -101,6 +102,26 @@ namespace Data
             return dict;
         }
     }
-	#endregion
+    #endregion
 
+
+    [Serializable]
+    public class PlayerStatData
+    {
+        public int statID;
+        public string statName;
+        public string statDesc;
+    }
+
+    public class PlayerStatDataLoader : ILoader<int, PlayerStatData>
+    {
+        public List<PlayerStatData> playerStats = new List<PlayerStatData>();
+        public Dictionary<int, PlayerStatData> MakeDict()
+        {
+            Dictionary<int, PlayerStatData> dict = new Dictionary<int, PlayerStatData>();
+            foreach (PlayerStatData item in playerStats)
+                dict.Add(item.statID, item);
+            return dict;
+        }
+    }
 }

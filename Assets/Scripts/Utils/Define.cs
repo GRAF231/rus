@@ -21,6 +21,13 @@ public class Define
         Lightning = 101,
         Shotgun = 102
     }
+
+    public struct ItemInfo
+    {
+        public int Type { get; set; }
+        public Data.WeaponData Data { get; set; }
+    }
+
     public enum MonsterStyle
     {
         unknown = 0,
