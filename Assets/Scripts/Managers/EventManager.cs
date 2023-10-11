@@ -17,9 +17,11 @@ public class EventManager
     public List<ItemInfo> SetRandomItem(PlayerStat player, int Maxcount)
     {
         int i = 0;
+        int loopCounter = 0;
         List<ItemInfo> PoolList = new List<ItemInfo>();
-        while(i < Maxcount)
+        while (i < Maxcount && loopCounter < 200)
         {
+            loopCounter++;
             ItemInfo selected;
             float random = Random.Range(0, 100);
             int rd = 0;
@@ -59,7 +61,7 @@ public class EventManager
             }
             else
             {
-                var weapon = Managers.Data.WeaponData[(int)SetRandomWeapon()];
+                var weapon = SetRandomWeapon();
                 selected = new ItemInfo
                 {
                     Type = 2,
@@ -68,6 +70,10 @@ public class EventManager
                     Desc = weapon.weaponDesc,
                 };
                 if (player.GetWeaponDict().GetValueOrDefault<Define.Weapons, int>((Define.Weapons)weapon.weaponID) >= 5)
+                    continue;
+                if ((int)player.playerStartWeapon == weapon.weaponID)
+                    continue;
+                if (weapon.weaponID > 100)
                     continue;
                 if (player.GetWeaponDict().Count >= 4 && !player.GetWeaponDict().ContainsKey((Define.Weapons)weapon.weaponID))
                     continue;
@@ -93,19 +99,21 @@ public class EventManager
 
     public Data.PlayerStatData SetRandomStat()
     {
-        int _statNum = Random.Range(0, Managers.Data.PlayerStatData.Count);
-        Debug.Log(Managers.Data.PlayerStatData.Count);
-        Data.PlayerStatData playerStats = Managers.Data.PlayerStatData[_statNum];
+        int statNum = Random.Range(0, Managers.Data.PlayerStatData.Count);
+        Debug.Log($"{statNum}, {Managers.Data.PlayerStatData.Count}");
+        Data.PlayerStatData playerStats = Managers.Data.PlayerStatData[new List<int>(Managers.Data.PlayerStatData.Keys)[statNum]];
+
         return playerStats;
     }
 
-    public Define.Weapons SetRandomWeapon()
-    {
-        int weaponNum = Random.Range(1, System.Enum.GetValues(typeof(Define.Weapons)).Length+1 - System.Enum.GetValues(typeof(Define.PlayerStartWeapon)).Length);
-        Define.Weapons playerWeapon = (Define.Weapons)weaponNum;
+    public Data.WeaponData SetRandomWeapon() {
+        int weaponNum = Random.Range(0, Managers.Data.WeaponData.Count);
+        Debug.Log($"{weaponNum}, {Managers.Data.WeaponData.Count}");
+        Data.WeaponData playerWeapon = Managers.Data.WeaponData[new List<int>(Managers.Data.WeaponData.Keys)[weaponNum]];
 
         return playerWeapon;
     }
+
     public void DropItem(EnemyStat stat, Transform transform)
     {
         GameObject item = null;

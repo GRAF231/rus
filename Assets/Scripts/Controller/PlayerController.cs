@@ -7,8 +7,11 @@ using UnityEngine.UI;
 public class PlayerController : BaseController
 {
     protected PlayerStat _stat;
-    public RuntimeAnimatorController[] animeCon;
+    public RuntimeAnimatorController animeCon;
+    public Sprite[] playerSprites;
     [SerializeField] Vector2 _inputVec;
+    [SerializeField] SpriteRenderer _viewSpriteRenderer;
+    [SerializeField] Animator _viewAnimator;
     [SerializeField] public Vector2 _lastDirVec = new Vector2(1, 0);
     bool _isDamaged = false;
     bool _isMobile = false;
@@ -20,8 +23,6 @@ public class PlayerController : BaseController
     {
         _stat = GetComponent<PlayerStat>();
         _rigid = GetComponent<Rigidbody2D>();
-        _sprite = GetComponent<SpriteRenderer>();
-        _anime = GetComponent<Animator>();
         _type = Define.WorldObject.Player;
         if (gameObject.GetComponentInChildren<UI_HPBar>() == null)
             Managers.UI.MakeWorldSpaceUI<UI_HPBar>(transform, "UI_HPBar");
@@ -79,15 +80,16 @@ public class PlayerController : BaseController
 
     private void LateUpdate()
     {
-        _anime.SetFloat("speed", _inputVec.magnitude);
+        _viewAnimator.SetFloat("speed", _inputVec.magnitude);
         if (_inputVec.x != 0)
         {
-            _sprite.flipX = (_inputVec.x < 0) ? false : true;
+            _viewSpriteRenderer.flipX = (_inputVec.x < 0) ? false : true;
         }
     }
     public void Init(Data.Player playerData)
     {
-        _anime.runtimeAnimatorController = animeCon[playerData.id - 1];
+        _viewSpriteRenderer.sprite = playerSprites[playerData.id - 1];
+        _viewAnimator.runtimeAnimatorController = animeCon;
         _stat.MaxHP = playerData.maxHp;
         _stat.HP = playerData.maxHp;
         _stat.Damage = playerData.damage;
@@ -131,12 +133,12 @@ public class PlayerController : BaseController
 
     IEnumerator OnDamagedColor()
     {
-        _sprite.color = Color.red;
+        _viewSpriteRenderer.color = Color.red;
 
         yield return new WaitForSeconds(_invincibility_time);
 
         _isDamaged = false;
-        _sprite.color = Color.white;
+        _viewSpriteRenderer.color = Color.white;
     }
 
 
@@ -144,7 +146,7 @@ public class PlayerController : BaseController
     {
         if(_stat.HP < 0)
         {
-            _anime.SetTrigger("dead");
+            _viewAnimator.SetTrigger("dead");
             _stat.HP = 0;
             Managers.UI.ShowPopupUI<UI_GameOver>();
             Managers.GamePause();
