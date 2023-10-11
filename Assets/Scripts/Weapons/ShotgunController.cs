@@ -63,6 +63,7 @@ public class ShotgunController : WeaponController
     {
         return nearbyEnemies.Count() > 0;
     }
+
     float SetAngleFromHandToCursor()
     {
         Vector3 dirVec = (Managers.Game.WorldMousePos - transform.position).normalized;
