@@ -277,12 +277,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Dead: 1261089785
+      Hit: -392852972
       Run 0: 613658156
+      Run 1: -140220566
       Run 2: 1611109861
       Run 3: 1488126946
-      Hit: -392852972
-      Run 1: -140220566
-      Dead: 1261089785
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -6,6 +6,8 @@ using static Define;
 
 public class EventManager
 {
+    public int maxWeaponLevel = 7;
+
     public struct ItemInfo
     {
         public int Type { get; set; }
@@ -37,7 +39,7 @@ public class EventManager
 
             if (rd== 0)
             {
-                if (player.GetWeaponDict()[player.playerStartWeapon] >= 5)
+                if (player.GetWeaponDict()[player.playerStartWeapon] >= maxWeaponLevel)
                     continue;
 
                 var weapon = Managers.Data.WeaponData[(int)player.playerStartWeapon];
@@ -69,7 +71,7 @@ public class EventManager
                     Name = weapon.weaponName,
                     Desc = weapon.weaponDesc,
                 };
-                if (player.GetWeaponDict().GetValueOrDefault<Define.Weapons, int>((Define.Weapons)weapon.weaponID) >= 5)
+                if (player.GetWeaponDict().GetValueOrDefault<Define.Weapons, int>((Define.Weapons)weapon.weaponID) >= maxWeaponLevel)
                     continue;
                 if ((int)player.playerStartWeapon == weapon.weaponID)
                     continue;
@@ -208,7 +210,7 @@ public class EventManager
             {
                 if (weapon.Key == player.playerStartWeapon)
                     continue;
-                if(weapon.Value < 5)
+                if(weapon.Value < maxWeaponLevel)
                 {
                     weaponFull = false;
                     break;
@@ -227,7 +229,7 @@ public class EventManager
         {
             Define.Weapons wp = SetRandomWeaponInItem();
             int weaponlevel = player.GetWeaponDict().GetValueOrDefault<Define.Weapons, int>(wp);
-            if (weaponlevel >= 5 || (player.GetWeaponDict().Count == 4 && weaponlevel == 0))
+            if (weaponlevel >= maxWeaponLevel || (player.GetWeaponDict().Count == 4 && weaponlevel == 0))
                 continue;
             weaponList.Add(wp);
             i++;

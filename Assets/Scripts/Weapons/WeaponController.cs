@@ -4,6 +4,8 @@ using UnityEngine;
 
 public abstract class WeaponController : MonoBehaviour
 {
+    public int maxLevel = 7;
+
     protected GameObject _player = null;
     PlayerStat _playerStat;
     Dictionary<int, Data.WeaponData> _weaponData;
@@ -50,8 +52,8 @@ public abstract class WeaponController : MonoBehaviour
 
     protected virtual void SetWeaponStat()
     {
-        if (_level > 5)
-            _level = 5;
+        if (_level > maxLevel)
+            _level = maxLevel;
 
         _damage = (int)(_weaponStat[_level].damage * ((float)(100+ _playerStat.Damage)/100f));
         _movSpeed = _weaponStat[_level].movSpeed;
