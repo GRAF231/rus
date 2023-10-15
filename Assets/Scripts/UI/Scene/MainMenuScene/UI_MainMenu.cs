@@ -7,8 +7,8 @@ using UnityEngine.EventSystems;
 
 public class UI_MainMenu : UI_Scene
 {
-    Animator _anime;
-    Image backgroundImg;
+    public Animator _anime;
+    public GameObject _container;
     bool _animeOver;
 
 
@@ -19,49 +19,31 @@ public class UI_MainMenu : UI_Scene
         Logo,
     }
 
-    enum ImageObjects
-    {
-        Farmers,
-        Monsters
-    }
-    
-    enum Texts
-    {
-        PresstoStartText
-    }
-
     enum Buttons
     {
         GamePlayButton,
-        GameExitButton
+        LangButton,
     }
 
     public override void Init()
     {
         Bind<Image>(typeof(Images));
-        Bind<GameObject>(typeof(ImageObjects));
-        Bind<TextMeshProUGUI>(typeof(Texts));
         Bind<Button>(typeof(Buttons));
-
-        backgroundImg = GetImage((int)Images.BackgroundImg);
-        _anime = backgroundImg.transform.GetComponent<Animator>();
 
         GetImage((int)Images.FrontImage).gameObject.AddUIEvent(SetAnimationOver);
 
         GetButton((int)Buttons.GamePlayButton).gameObject.AddUIEvent(ShowCharacterSelectUI);
-        GetButton((int)Buttons.GameExitButton).gameObject.AddUIEvent(ExitGame);
     }
 
     void SetAnimationOver(PointerEventData data)
     {
-        _animeOver = backgroundImg.transform.GetComponent<AnimeOver>()._animeOver;
+        _animeOver = _container.transform.GetComponent<AnimeOver>()._animeOver;
         if (!_animeOver)
         {
             _anime.Play("MainGameStartAnime", -1, 1.0f);
         }
         else
         {
-            Managers.Resource.Destroy(GetText((int)Texts.PresstoStartText).gameObject);
             foreach(Buttons button in System.Enum.GetValues(typeof(Buttons)))
             {
                 GetButton((int)button).gameObject.SetActive(true);
@@ -74,15 +56,5 @@ public class UI_MainMenu : UI_Scene
         Managers.Sound.Play("Select", Define.Sound.Effect);
         Debug.Log("Show!");
         Managers.UI.ShowPopupUI<UI_CharacterSelect>();
-    }
-
-    void ExitGame(PointerEventData data)
-    {
-        Managers.Sound.Play("Select", Define.Sound.Effect);
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
     }
 }

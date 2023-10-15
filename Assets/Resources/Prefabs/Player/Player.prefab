@@ -703,12 +703,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 9ee1f836ec15a46dc8cf5d747c1ae7c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 36409bcc7bdf14e5797c6545106b459e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 11.52, y: 11.52}
+  m_Size: {x: 1.152, y: 1.152}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -861,7 +861,7 @@ MonoBehaviour:
   _type: 0
   animeCon: {fileID: 9100000, guid: 9d5ea2f1db80ccb40ad5b9c800bf26e4, type: 2}
   playerSprites:
-  - {fileID: 21300000, guid: 9ee1f836ec15a46dc8cf5d747c1ae7c2, type: 3}
+  - {fileID: 21300000, guid: 36409bcc7bdf14e5797c6545106b459e, type: 3}
   - {fileID: 21300000, guid: 5fbff49d89daf4a66be5e0a90de41e13, type: 3}
   _inputVec: {x: 0, y: 0}
   _viewSpriteRenderer: {fileID: 4997882540002344797}

@@ -88,6 +88,7 @@ public class EnemyController : BaseController
         }
         _viewAnimator.runtimeAnimatorController = animeCon;
         _viewSpriteRenderer.sprite = enemySprites[monsterStat.id - 1];
+        _viewSpriteRenderer.color = Color.white;
         if (monsterStat.id == 5)
             _isRange = true;
         if (type == Define.MonsterType.middleBoss)
