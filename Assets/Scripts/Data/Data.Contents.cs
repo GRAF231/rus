@@ -72,7 +72,12 @@ namespace Data
     {
         public int weaponID;
         public string weaponName;
+        public string weaponTitle;
         public string weaponDesc;
+        public string weaponTitleEn;
+        public string weaponDescEn;
+        public string weaponTitleRu;
+        public string weaponDescRu;
         public List<WeaponLevelData> weaponLevelData = new List<WeaponLevelData>();
 
 	}
@@ -94,11 +99,28 @@ namespace Data
 	public class WeaponDataLoader : ILoader<int, WeaponData>
 	{
 		public List<WeaponData> weapons = new List<WeaponData>();
+
+        private WeaponData LocalizeWeapon(WeaponData data)
+        {
+            if (Managers.I18n.Lang == I18NManager.Language.en)
+            {
+                data.weaponTitle = data.weaponTitleEn;
+                data.weaponDesc = data.weaponDescEn;
+            }
+            else if (Managers.I18n.Lang == I18NManager.Language.ru)
+            {
+                data.weaponTitle = data.weaponTitleRu;
+                data.weaponDesc = data.weaponDescRu;
+            }
+
+            return data;
+        }
+
         public Dictionary<int, WeaponData> MakeDict()
         {
             Dictionary<int, WeaponData> dict = new Dictionary<int, WeaponData>();
             foreach (WeaponData weapon in weapons)
-                dict.Add(weapon.weaponID, weapon);
+                dict.Add(weapon.weaponID, LocalizeWeapon(weapon));
             return dict;
         }
     }
@@ -110,17 +132,41 @@ namespace Data
     {
         public int statID;
         public string statName;
+        public string statTitle;
         public string statDesc;
+        public string statTitleEn;
+        public string statDescEn;
+        public string statTitleRu;
+        public string statDescRu;
     }
 
     public class PlayerStatDataLoader : ILoader<int, PlayerStatData>
     {
         public List<PlayerStatData> playerStats = new List<PlayerStatData>();
+
+		private PlayerStatData LocalizeStat(PlayerStatData data)
+		{
+			if (Managers.I18n.Lang == I18NManager.Language.en)
+            {
+                data.statTitle = data.statTitleEn;
+                data.statDesc = data.statDescEn;
+            }
+			else if (Managers.I18n.Lang == I18NManager.Language.ru)
+            {
+                data.statTitle = data.statDescRu;
+				data.statDesc = data.statDescRu;
+            }
+
+            return data;
+		}
+
         public Dictionary<int, PlayerStatData> MakeDict()
         {
             Dictionary<int, PlayerStatData> dict = new Dictionary<int, PlayerStatData>();
-            foreach (PlayerStatData item in playerStats)
-                dict.Add(item.statID, item);
+			foreach (PlayerStatData item in playerStats)
+			{
+				dict.Add(item.statID, LocalizeStat(item));
+			}
             return dict;
         }
     }

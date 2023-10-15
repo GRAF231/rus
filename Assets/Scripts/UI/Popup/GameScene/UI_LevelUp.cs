@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -41,9 +42,10 @@ public class UI_LevelUp : UI_Popup
             GameObject upgradePanel = Managers.UI.MakeSubItem<UpgdPanel>(parent:gridPanel.transform).gameObject;
             UpgdPanel upgradeDesc = upgradePanel.GetOrAddComponent<UpgdPanel>();
             upgradeDesc.SetData(itemList[i]);
-            var title = itemList[i].Name;
+            var name = itemList[i].Name;
+            var title = itemList[i].Title;
             var desc = itemList[i].Desc;
-            upgradeDesc.SetInfo(title, desc);
+            upgradeDesc.SetInfo(name, title, desc);
         }
     }
 }

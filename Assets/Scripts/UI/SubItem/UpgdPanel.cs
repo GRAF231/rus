@@ -39,9 +39,9 @@ public class UpgdPanel : UI_Base
         Managers.Event.LevelUpOverEvent(itemType, itemName);
     }
 
-    public void SetInfo(string title, string desc)
+    public void SetInfo(string name, string title, string desc)
     {
-        GetImage((int)Images.UpgdImg).sprite = Managers.Resource.Load<Sprite>($"Prefabs/SpriteIcon/{title}");
+        GetImage((int)Images.UpgdImg).sprite = Managers.Resource.Load<Sprite>($"Prefabs/SpriteIcon/{name}");
         Get<TextMeshProUGUI>((int)Texts.UpgdTitleText).text = title;
         Get<TextMeshProUGUI>((int)Texts.UpgdDescText).text = desc;
     }

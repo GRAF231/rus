@@ -13,6 +13,7 @@ public class EventManager
         public int Type { get; set; }
         public int ID { get; set; }
         public string Name { get; set; }
+        public string Title { get; set; }
         public string Desc { get; set; }
     }
 
@@ -47,6 +48,7 @@ public class EventManager
                     Type = 0,
                     ID = weapon.weaponID,
                     Name = weapon.weaponName,
+                    Title = weapon.weaponTitle,
                     Desc = weapon.weaponDesc,
                 };
             }
@@ -58,6 +60,7 @@ public class EventManager
                     Type = 1,
                     ID = stat.statID,
                     Name = stat.statName,
+                    Title = stat.statTitle,
                     Desc = stat.statDesc,
                 };
             }
@@ -69,6 +72,7 @@ public class EventManager
                     Type = 2,
                     ID = weapon.weaponID,
                     Name = weapon.weaponName,
+                    Title = weapon.weaponTitle,
                     Desc = weapon.weaponDesc,
                 };
                 if (player.GetWeaponDict().GetValueOrDefault<Define.Weapons, int>((Define.Weapons)weapon.weaponID) >= maxWeaponLevel)

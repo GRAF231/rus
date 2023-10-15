@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PoisonController : WeaponController
 {
-
     bool _isCool = false;
     private float _deg = 0;
 

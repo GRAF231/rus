@@ -3,32 +3,50 @@
         {
             "statID": "1",
             "statName": "MaxHP",
-            "statDesc": "MaxHP"
+            "statTitleEn": "MaxHP",
+            "statDescEn": "MaxHP",
+            "statTitleRu": "MaxHP",
+            "statDescRu": "MaxHP"
         },
         {
             "statID": "2",
             "statName": "MoveSpeed",
-            "statDesc": "MoveSpeed"
+            "statTitleEn": "MoveSpeed",
+            "statDescEn": "MoveSpeed",
+            "statTitleRu": "MoveSpeed",
+            "statDescRu": "MoveSpeed"
         },
         {
             "statID": "3",
             "statName": "Damage",
-            "statDesc": "Damage"
+            "statTitleEn": "Damage",
+            "statDescEn": "Damage",
+            "statTitleRu": "Damage",
+            "statDescRu": "Damage"
         },
         {
             "statID": "4",
             "statName": "Defense",
-            "statDesc": "Defense"
+            "statTitleEn": "Defense",
+            "statDescEn": "Defense",
+            "statTitleRu": "Defense",
+            "statDescRu": "Defense"
         },
         {
             "statID": "5",
             "statName": "Cooldown",
-            "statDesc": "Cooldown"
+            "statTitleEn": "Cooldown",
+            "statDescEn": "Cooldown",
+            "statTitleRu": "Cooldown",
+            "statDescRu": "Cooldown"
         },
         {
             "statID": "6",
             "statName": "Amount",
-            "statDesc": "Amount"
+            "statTitleEn": "Amount",
+            "statDescEn": "Amount",
+            "statTitleRu": "Amount",
+            "statDescRu": "Amount"
         }
     ]
 }

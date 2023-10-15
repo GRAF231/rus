@@ -3,463 +3,482 @@
     {
         "weaponID": "1",
         "weaponName": "Knife",
-        "weaponDesc": "Knife",
-      "weaponLevelData": [
-        {
-          "level": "1",
-          "damage": "25",
-          "movSpeed": "10",
-          "force": "2",
-          "cooldown": "2",
-          "size": "1",
-          "penetrate": "1",
-          "countPerCreate": "1"
-        },
-        {
-          "level": "2",
-          "damage": "30",
-          "movSpeed": "10",
-          "force": "2",
-          "cooldown": "2",
-          "size": "1",
-          "penetrate": "1",
-          "countPerCreate": "2"
-        },
-        {
-          "level": "3",
-          "damage": "35",
-          "movSpeed": "10",
-          "force": "2",
-          "cooldown": "2",
-          "size": "1",
-          "penetrate": "1",
-          "countPerCreate": "2"
-        },
-        {
-          "level": "4",
-          "damage": "40",
-          "movSpeed": "10",
-          "force": "2",
-          "cooldown": "2",
-          "size": "1",
-          "penetrate": "1",
-          "countPerCreate": "3"
-        },
-        {
-          "level": "5",
-          "damage": "45",
-          "movSpeed": "10",
-          "force": "2",
-          "cooldown": "1.5",
-          "size": "1",
-          "penetrate": "1",
-          "countPerCreate": "3"
-        },
-        {
-          "level": "6",
-          "damage": "45",
-          "movSpeed": "10",
-          "force": "2",
-          "cooldown": "1.5",
-          "size": "1",
-          "penetrate": "1",
-          "countPerCreate": "4"
-        },
-        {
-          "level": "7",
-          "damage": "55",
-          "movSpeed": "10",
-          "force": "2",
-          "cooldown": "1.2",
-          "size": "1",
-          "penetrate": "1",
-          "countPerCreate": "4"
-        }
-      ]
+        "weaponTitleEn": "Knife",
+        "weaponDescEn": "Knife",
+        "weaponTitleRu": "Knife",
+        "weaponDescRu": "Knife",
+        "weaponLevelData": [
+            {
+                "level": "1",
+                "damage": "25",
+                "movSpeed": "10",
+                "force": "2",
+                "cooldown": "2",
+                "size": "1",
+                "penetrate": "1",
+                "countPerCreate": "1"
+            },
+            {
+                "level": "2",
+                "damage": "30",
+                "movSpeed": "10",
+                "force": "2",
+                "cooldown": "2",
+                "size": "1",
+                "penetrate": "1",
+                "countPerCreate": "2"
+            },
+            {
+                "level": "3",
+                "damage": "35",
+                "movSpeed": "10",
+                "force": "2",
+                "cooldown": "2",
+                "size": "1",
+                "penetrate": "1",
+                "countPerCreate": "2"
+            },
+            {
+                "level": "4",
+                "damage": "40",
+                "movSpeed": "10",
+                "force": "2",
+                "cooldown": "2",
+                "size": "1",
+                "penetrate": "1",
+                "countPerCreate": "3"
+            },
+            {
+                "level": "5",
+                "damage": "45",
+                "movSpeed": "10",
+                "force": "2",
+                "cooldown": "1.5",
+                "size": "1",
+                "penetrate": "1",
+                "countPerCreate": "3"
+            },
+            {
+                "level": "6",
+                "damage": "45",
+                "movSpeed": "10",
+                "force": "2",
+                "cooldown": "1.5",
+                "size": "1",
+                "penetrate": "1",
+                "countPerCreate": "4"
+            },
+            {
+                "level": "7",
+                "damage": "55",
+                "movSpeed": "10",
+                "force": "2",
+                "cooldown": "1.2",
+                "size": "1",
+                "penetrate": "1",
+                "countPerCreate": "4"
+            }
+        ]
     },
     {
         "weaponID": "2",
         "weaponName": "Fireball",
-        "weaponDesc": "Knife",
-      "weaponLevelData": [
-        {
-          "level": "1",
-          "damage": "40",
-          "movSpeed": "4",
-          "force": "2",
-          "cooldown": "4",
-          "size": "0.8",
-          "penetrate": "1",
-          "countPerCreate": "1"
-        },
-        {
-          "level": "2",
-          "damage": "50",
-          "movSpeed": "4.5",
-          "force": "2",
-          "cooldown": "4",
-          "size": "0.9",
-          "penetrate": "1",
-          "countPerCreate": "1"
-        },
-        {
-          "level": "3",
-          "damage": "70",
-          "movSpeed": "4",
-          "force": "3",
-          "cooldown": "4",
-          "size": "1.1",
-          "penetrate": "2",
-          "countPerCreate": "1"
-        },
-        {
-          "level": "4",
-          "damage": "70",
-          "movSpeed": "5",
-          "force": "3",
-          "cooldown": "4",
-          "size": "1.15",
-          "penetrate": "2",
-          "countPerCreate": "2"
-        },
-        {
-          "level": "5",
-          "damage": "90",
-          "movSpeed": "6",
-          "force": "4",
-          "cooldown": "4",
-          "size": "1.25",
-          "penetrate": "3",
-          "countPerCreate": "2"
-        },
-        {
-          "level": "6",
-          "damage": "90",
-          "movSpeed": "5",
-          "force": "3",
-          "cooldown": "4",
-          "size": "1.15",
-          "penetrate": "2",
-          "countPerCreate": "2"
-        },
-        {
-          "level": "7",
-          "damage": "90",
-          "movSpeed": "6",
-          "force": "4",
-          "cooldown": "4",
-          "size": "1.25",
-          "penetrate": "3",
-          "countPerCreate": "3"
-        }
-      ]
+        "weaponTitleEn": "Fireball",
+        "weaponDescEn": "Fireball",
+        "weaponTitleRu": "Fireball",
+        "weaponDescRu": "Fireball",
+        "weaponLevelData": [
+            {
+                "level": "1",
+                "damage": "40",
+                "movSpeed": "4",
+                "force": "2",
+                "cooldown": "4",
+                "size": "0.8",
+                "penetrate": "1",
+                "countPerCreate": "1"
+            },
+            {
+                "level": "2",
+                "damage": "50",
+                "movSpeed": "4.5",
+                "force": "2",
+                "cooldown": "4",
+                "size": "0.9",
+                "penetrate": "1",
+                "countPerCreate": "1"
+            },
+            {
+                "level": "3",
+                "damage": "70",
+                "movSpeed": "4",
+                "force": "3",
+                "cooldown": "4",
+                "size": "1.1",
+                "penetrate": "2",
+                "countPerCreate": "1"
+            },
+            {
+                "level": "4",
+                "damage": "70",
+                "movSpeed": "5",
+                "force": "3",
+                "cooldown": "4",
+                "size": "1.15",
+                "penetrate": "2",
+                "countPerCreate": "2"
+            },
+            {
+                "level": "5",
+                "damage": "90",
+                "movSpeed": "6",
+                "force": "4",
+                "cooldown": "4",
+                "size": "1.25",
+                "penetrate": "3",
+                "countPerCreate": "2"
+            },
+            {
+                "level": "6",
+                "damage": "90",
+                "movSpeed": "5",
+                "force": "3",
+                "cooldown": "4",
+                "size": "1.15",
+                "penetrate": "2",
+                "countPerCreate": "2"
+            },
+            {
+                "level": "7",
+                "damage": "90",
+                "movSpeed": "6",
+                "force": "4",
+                "cooldown": "4",
+                "size": "1.25",
+                "penetrate": "3",
+                "countPerCreate": "3"
+            }
+        ]
     },
     {
-      "weaponID": "3",
-      "weaponName": "Spin",
-      "weaponLevelData": [
-        {
-          "level": "1",
-          "damage": "25",
-          "movSpeed": "50",
-          "force": "2",
-          "cooldown": "0",
-          "size": "1",
-          "penetrate": "1",
-          "countPerCreate": "1"
-        },
-        {
-          "level": "2",
-          "damage": "25",
-          "movSpeed": "100",
-          "force": "2",
-          "cooldown": "0",
-          "size": "1",
-          "penetrate": "1",
-          "countPerCreate": "2"
-        },
-        {
-          "level": "3",
-          "damage": "30",
-          "movSpeed": "200",
-          "force": "2",
-          "cooldown": "0",
-          "size": "1",
-          "penetrate": "1",
-          "countPerCreate": "2"
-        },
-        {
-          "level": "4",
-          "damage": "30",
-          "movSpeed": "300",
-          "force": "2",
-          "cooldown": "0",
-          "size": "1",
-          "penetrate": "1",
-          "countPerCreate": "3"
-        },
-        {
-          "level": "5",
-          "damage": "40",
-          "movSpeed": "500",
-          "force": "2",
-          "cooldown": "0",
-          "size": "1",
-          "penetrate": "1",
-          "countPerCreate": "3"
-        },
-        {
-          "level": "6",
-          "damage": "40",
-          "movSpeed": "300",
-          "force": "2",
-          "cooldown": "0",
-          "size": "1",
-          "penetrate": "1",
-          "countPerCreate": "4"
-        },
-        {
-          "level": "7",
-          "damage": "50",
-          "movSpeed": "500",
-          "force": "2",
-          "cooldown": "0",
-          "size": "1",
-          "penetrate": "1",
-          "countPerCreate": "5"
-        }
-      ]
+        "weaponID": "3",
+        "weaponName": "Spin",
+        "weaponTitleEn": "Axe",
+        "weaponDescEn": "Axe",
+        "weaponTitleRu": "Axe",
+        "weaponDescRu": "Axe",
+        "weaponLevelData": [
+            {
+                "level": "1",
+                "damage": "25",
+                "movSpeed": "50",
+                "force": "2",
+                "cooldown": "0",
+                "size": "1",
+                "penetrate": "1",
+                "countPerCreate": "1"
+            },
+            {
+                "level": "2",
+                "damage": "25",
+                "movSpeed": "100",
+                "force": "2",
+                "cooldown": "0",
+                "size": "1",
+                "penetrate": "1",
+                "countPerCreate": "2"
+            },
+            {
+                "level": "3",
+                "damage": "30",
+                "movSpeed": "200",
+                "force": "2",
+                "cooldown": "0",
+                "size": "1",
+                "penetrate": "1",
+                "countPerCreate": "2"
+            },
+            {
+                "level": "4",
+                "damage": "30",
+                "movSpeed": "300",
+                "force": "2",
+                "cooldown": "0",
+                "size": "1",
+                "penetrate": "1",
+                "countPerCreate": "3"
+            },
+            {
+                "level": "5",
+                "damage": "40",
+                "movSpeed": "500",
+                "force": "2",
+                "cooldown": "0",
+                "size": "1",
+                "penetrate": "1",
+                "countPerCreate": "3"
+            },
+            {
+                "level": "6",
+                "damage": "40",
+                "movSpeed": "300",
+                "force": "2",
+                "cooldown": "0",
+                "size": "1",
+                "penetrate": "1",
+                "countPerCreate": "4"
+            },
+            {
+                "level": "7",
+                "damage": "50",
+                "movSpeed": "500",
+                "force": "2",
+                "cooldown": "0",
+                "size": "1",
+                "penetrate": "1",
+                "countPerCreate": "5"
+            }
+        ]
     },
     {
         "weaponID": "4",
         "weaponName": "Poison",
-        "weaponDesc": "Knife",
-      "weaponLevelData": [
-        {
-          "level": "1",
-          "damage": "10",
-          "movSpeed": "0",
-          "force": "2",
-          "cooldown": "1",
-          "size": "2",
-          "penetrate": "1",
-          "countPerCreate": "1"
-        },
-        {
-          "level": "2",
-          "damage": "15",
-          "movSpeed": "0",
-          "force": "2",
-          "cooldown": "0.9",
-          "size": "2.5",
-          "penetrate": "1",
-          "countPerCreate": "1"
-        },
-        {
-          "level": "3",
-          "damage": "19",
-          "movSpeed": "0",
-          "force": "2",
-          "cooldown": "0.8",
-          "size": "3",
-          "penetrate": "1",
-          "countPerCreate": "1"
-        },
-        {
-          "level": "4",
-          "damage": "25",
-          "movSpeed": "0",
-          "force": "2",
-          "cooldown": "0.7",
-          "size": "3.5",
-          "penetrate": "1",
-          "countPerCreate": "1"
-        },
-        {
-          "level": "5",
-          "damage": "30",
-          "movSpeed": "0",
-          "force": "2",
-          "cooldown": "0.5",
-          "size": "4",
-          "penetrate": "1",
-          "countPerCreate": "1"
-        },
-        {
-          "level": "6",
-          "damage": "35",
-          "movSpeed": "0",
-          "force": "2",
-          "cooldown": "0.5",
-          "size": "4.5",
-          "penetrate": "1",
-          "countPerCreate": "1"
-        },
-        {
-          "level": "7",
-          "damage": "46",
-          "movSpeed": "0",
-          "force": "2",
-          "cooldown": "0.5",
-          "size": "5",
-          "penetrate": "1",
-          "countPerCreate": "1"
-        }
-      ]
+        "weaponTitleEn": "Poison",
+        "weaponDescEn": "Poison",
+        "weaponTitleRu": "Poison",
+        "weaponDescRu": "Poison",
+        "weaponLevelData": [
+            {
+                "level": "1",
+                "damage": "10",
+                "movSpeed": "0",
+                "force": "2",
+                "cooldown": "1",
+                "size": "2",
+                "penetrate": "1",
+                "countPerCreate": "1"
+            },
+            {
+                "level": "2",
+                "damage": "15",
+                "movSpeed": "0",
+                "force": "2",
+                "cooldown": "0.9",
+                "size": "2.5",
+                "penetrate": "1",
+                "countPerCreate": "1"
+            },
+            {
+                "level": "3",
+                "damage": "19",
+                "movSpeed": "0",
+                "force": "2",
+                "cooldown": "0.8",
+                "size": "3",
+                "penetrate": "1",
+                "countPerCreate": "1"
+            },
+            {
+                "level": "4",
+                "damage": "25",
+                "movSpeed": "0",
+                "force": "2",
+                "cooldown": "0.7",
+                "size": "3.5",
+                "penetrate": "1",
+                "countPerCreate": "1"
+            },
+            {
+                "level": "5",
+                "damage": "30",
+                "movSpeed": "0",
+                "force": "2",
+                "cooldown": "0.5",
+                "size": "4",
+                "penetrate": "1",
+                "countPerCreate": "1"
+            },
+            {
+                "level": "6",
+                "damage": "35",
+                "movSpeed": "0",
+                "force": "2",
+                "cooldown": "0.5",
+                "size": "4.5",
+                "penetrate": "1",
+                "countPerCreate": "1"
+            },
+            {
+                "level": "7",
+                "damage": "46",
+                "movSpeed": "0",
+                "force": "2",
+                "cooldown": "0.5",
+                "size": "5",
+                "penetrate": "1",
+                "countPerCreate": "1"
+            }
+        ]
     },
     {
         "weaponID": "101",
         "weaponName": "Lightning",
-        "weaponDesc": "Knife",
-      "weaponLevelData": [
-        {
-          "level": "1",
-          "damage": "40",
-          "movSpeed": "0",
-          "force": "2",
-          "cooldown": "4",
-          "size": "1",
-          "penetrate": "0",
-          "countPerCreate": "1"
-        },
-        {
-          "level": "2",
-          "damage": "60",
-          "movSpeed": "0",
-          "force": "2",
-          "cooldown": "3.5",
-          "size": "1.5",
-          "penetrate": "0",
-          "countPerCreate": "1"
-        },
-        {
-          "level": "3",
-          "damage": "80",
-          "movSpeed": "0",
-          "force": "2",
-          "cooldown": "3",
-          "size": "2",
-          "penetrate": "0",
-          "countPerCreate": "1"
-        },
-        {
-          "level": "4",
-          "damage": "100",
-          "movSpeed": "0",
-          "force": "2",
-          "cooldown": "2",
-          "size": "2.5",
-          "penetrate": "0",
-          "countPerCreate": "2"
-        },
-        {
-          "level": "5",
-          "damage": "120",
-          "movSpeed": "0",
-          "force": "2",
-          "cooldown": "1",
-          "size": "3",
-          "penetrate": "0",
-          "countPerCreate": "2"
-        },
-        {
-          "level": "6",
-          "damage": "120",
-          "movSpeed": "0",
-          "force": "2",
-          "cooldown": "1",
-          "size": "3",
-          "penetrate": "0",
-          "countPerCreate": "2"
-        },
-        {
-          "level": "7",
-          "damage": "120",
-          "movSpeed": "0",
-          "force": "2",
-          "cooldown": "1",
-          "size": "3",
-          "penetrate": "0",
-          "countPerCreate": "3"
-        }
-      ]
+        "weaponTitleEn": "Lightning",
+        "weaponDescEn": "Lightning",
+        "weaponTitleRu": "Lightning",
+        "weaponDescRu": "Lightning",
+        "weaponLevelData": [
+            {
+                "level": "1",
+                "damage": "40",
+                "movSpeed": "0",
+                "force": "2",
+                "cooldown": "4",
+                "size": "1",
+                "penetrate": "0",
+                "countPerCreate": "1"
+            },
+            {
+                "level": "2",
+                "damage": "60",
+                "movSpeed": "0",
+                "force": "2",
+                "cooldown": "3.5",
+                "size": "1.5",
+                "penetrate": "0",
+                "countPerCreate": "1"
+            },
+            {
+                "level": "3",
+                "damage": "80",
+                "movSpeed": "0",
+                "force": "2",
+                "cooldown": "3",
+                "size": "2",
+                "penetrate": "0",
+                "countPerCreate": "1"
+            },
+            {
+                "level": "4",
+                "damage": "100",
+                "movSpeed": "0",
+                "force": "2",
+                "cooldown": "2",
+                "size": "2.5",
+                "penetrate": "0",
+                "countPerCreate": "2"
+            },
+            {
+                "level": "5",
+                "damage": "120",
+                "movSpeed": "0",
+                "force": "2",
+                "cooldown": "1",
+                "size": "3",
+                "penetrate": "0",
+                "countPerCreate": "2"
+            },
+            {
+                "level": "6",
+                "damage": "120",
+                "movSpeed": "0",
+                "force": "2",
+                "cooldown": "1",
+                "size": "3",
+                "penetrate": "0",
+                "countPerCreate": "2"
+            },
+            {
+                "level": "7",
+                "damage": "120",
+                "movSpeed": "0",
+                "force": "2",
+                "cooldown": "1",
+                "size": "3",
+                "penetrate": "0",
+                "countPerCreate": "3"
+            }
+        ]
     },
     {
         "weaponID": "102",
         "weaponName": "Shotgun",
-        "weaponDesc": "Knife",
-      "weaponLevelData": [
-        {
-          "level": "1",
-          "damage": "24",
-          "movSpeed": "15",
-          "force": "2",
-          "cooldown": "1",
-          "size": "1",
-          "penetrate": "4",
-          "countPerCreate": "1"
-        },
-        {
-          "level": "2",
-          "damage": "30",
-          "movSpeed": "15",
-          "force": "2",
-          "cooldown": "1",
-          "size": "1",
-          "penetrate": "4",
-          "countPerCreate": "1"
-        },
-        {
-          "level": "3",
-          "damage": "30",
-          "movSpeed": "20",
-          "force": "2",
-          "cooldown": "1",
-          "size": "1",
-          "penetrate": "4",
-          "countPerCreate": "2"
-        },
-        {
-          "level": "4",
-          "damage": "36",
-          "movSpeed": "25",
-          "force": "3",
-          "cooldown": "1",
-          "size": "1",
-          "penetrate": "6",
-          "countPerCreate": "2"
-        },
-        {
-          "level": "5",
-          "damage": "36",
-          "movSpeed": "30",
-          "force": "4",
-          "cooldown": "1",
-          "size": "1",
-          "penetrate": "6",
-          "countPerCreate": "3"
-        },
-        {
-          "level": "6",
-          "damage": "46",
-          "movSpeed": "35",
-          "force": "5",
-          "cooldown": "1",
-          "size": "1",
-          "penetrate": "10",
-          "countPerCreate": "3"
-        },
-        {
-          "level": "7",
-          "damage": "46",
-          "movSpeed": "45",
-          "force": "5",
-          "cooldown": "1",
-          "size": "1",
-          "penetrate": "10",
-          "countPerCreate": "5"
-        }
-      ]
+        "weaponTitleEn": "Bow",
+        "weaponDescEn": "Bow",
+        "weaponTitleRu": "Bow",
+        "weaponDescRu": "Bow",
+        "weaponLevelData": [
+            {
+                "level": "1",
+                "damage": "24",
+                "movSpeed": "15",
+                "force": "2",
+                "cooldown": "1",
+                "size": "1",
+                "penetrate": "4",
+                "countPerCreate": "1"
+            },
+            {
+                "level": "2",
+                "damage": "30",
+                "movSpeed": "15",
+                "force": "2",
+                "cooldown": "1",
+                "size": "1",
+                "penetrate": "4",
+                "countPerCreate": "1"
+            },
+            {
+                "level": "3",
+                "damage": "30",
+                "movSpeed": "20",
+                "force": "2",
+                "cooldown": "1",
+                "size": "1",
+                "penetrate": "4",
+                "countPerCreate": "2"
+            },
+            {
+                "level": "4",
+                "damage": "36",
+                "movSpeed": "25",
+                "force": "3",
+                "cooldown": "1",
+                "size": "1",
+                "penetrate": "6",
+                "countPerCreate": "2"
+            },
+            {
+                "level": "5",
+                "damage": "36",
+                "movSpeed": "30",
+                "force": "4",
+                "cooldown": "1",
+                "size": "1",
+                "penetrate": "6",
+                "countPerCreate": "3"
+            },
+            {
+                "level": "6",
+                "damage": "46",
+                "movSpeed": "35",
+                "force": "5",
+                "cooldown": "1",
+                "size": "1",
+                "penetrate": "10",
+                "countPerCreate": "3"
+            },
+            {
+                "level": "7",
+                "damage": "46",
+                "movSpeed": "45",
+                "force": "5",
+                "cooldown": "1",
+                "size": "1",
+                "penetrate": "10",
+                "countPerCreate": "5"
+            }
+        ]
     }
   ]
 }
