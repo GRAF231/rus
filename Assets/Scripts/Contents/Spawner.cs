@@ -13,6 +13,7 @@ public class Spawner : MonoBehaviour
 
     [SerializeField]
     int _maxSpawnUnit = 80;
+    PlayerStat _playerStat;
 
     public int enemyCount = 0;
     int timeLevel = 0;
@@ -22,6 +23,7 @@ public class Spawner : MonoBehaviour
     {
         monsterStat = Managers.Data.MonsterData;
         spawnPoint = GetComponentsInChildren<Transform>();
+        _playerStat = Managers.Game.getPlayer().GetComponent<PlayerStat>();
         Managers.Game.OnSpawnEvent -= AddEnemyCount;
         Managers.Game.OnSpawnEvent += AddEnemyCount;
     }
@@ -45,9 +47,9 @@ public class Spawner : MonoBehaviour
     void SpawnBoss(int timeLevel)
     {
         GameObject Boss = null;
+        int level = _playerStat.Level;
         if (timeLevel < 5)
         {
-            int level = Managers.Game.getPlayer().GetComponent<PlayerStat>().Level;
             Boss = Managers.Game.Spawn(Define.WorldObject.Enemy, "Monster/Enemy");
             Boss.GetOrAddComponent<EnemyController>().Init(monsterStat[timeLevel], level, Define.MonsterType.middleBoss);
         }
@@ -70,16 +72,16 @@ public class Spawner : MonoBehaviour
     IEnumerator SpawnMonster()
     {
         _isSpawning = true;
+        int level = _playerStat.Level;
         if (enemyCount < _maxSpawnUnit)
         {
             int monsterType = SetRandomMonster(timeLevel);
 
-            int level = Managers.Game.getPlayer().GetComponent<PlayerStat>().Level;
             GameObject enemy = Managers.Game.Spawn(Define.WorldObject.Enemy, "Monster/Enemy");
             enemy.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length)].position;
             enemy.GetOrAddComponent<EnemyController>().Init(monsterStat[monsterType], level, Define.MonsterType.Enemy);
         }
-        yield return new WaitForSeconds(_spawnTime);
+        yield return new WaitForSeconds(level < 10 ? _spawnTime * 2 : _spawnTime);
         _isSpawning = false;
     }
 
