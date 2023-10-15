@@ -11,7 +11,6 @@ public class LightningController : WeaponController
 
     bool _isAttack = false;
     private GameObject _playerUI = null;
-    Image _image_skill;
 
     private PlayerController _playerController;
     private Vector2 lastEnemyPos;
@@ -29,22 +28,8 @@ public class LightningController : WeaponController
         base.SetWeaponStat();
     }
 
-    private void OnEnable()
-    {
-        _playerUI = GameObject.Find("UI_Player");
-        if (object.ReferenceEquals(_playerUI, null))
-        {
-            Managers.UI.ShowSceneUI<UI_Player>();
-            return;
-        }
-
-        _image_skill = _playerUI.FindChild<Image>("CursorCoolTimeImg");
-        _image_skill.gameObject.SetActive(true);
-    }
-
     void Update()
     {
-        UpdateSkillCoolTimeImage();
          if (!_isAttack)
             {
                 StartCoroutine(DamageCoolTime());
@@ -59,15 +44,6 @@ public class LightningController : WeaponController
                     go.GetComponent<BaseController>().OnDamaged(_damage, _force);
                 }
         }
-    }
-
-    void UpdateSkillCoolTimeImage()
-    {
-
-        //_image_skill.transform.position = Managers.Game.MousePos;
-  
-        // _image_skill.transform.position = GetNearbyEnemyPos();
-
     }
 
     bool IsEnemiesInRange()
@@ -111,7 +87,6 @@ public class LightningController : WeaponController
         while (currentCooltime > 0f)
         {
             currentCooltime -= Time.deltaTime;
-            _image_skill.fillAmount = ((_cooldown - currentCooltime) / _cooldown);
             yield return new WaitForFixedUpdate();
 
         }

@@ -15,7 +15,7 @@ public class Util
 #if !UNITY_EDITOR && UNITY_WEBGL
         return IsMobile();
 #endif
-        return false;
+        return UnityEngine.Device.SystemInfo.deviceType != DeviceType.Desktop;
     }
 
     public static T GetOrAddComponent<T>(GameObject go) where T: UnityEngine.Component
