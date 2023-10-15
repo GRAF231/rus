@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &201717282
 RectTransform:
   m_ObjectHideFlags: 0
@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 8356786571150779339}
   - component: {fileID: 5305512384538886753}
   - component: {fileID: 6811758364570826245}
+  - component: {fileID: 7683315106084788225}
   m_Layer: 5
   m_Name: LangButton
   m_TagString: Untagged
@@ -197,6 +198,23 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7683315106084788225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4337495079199278341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcdb538afd5f4420dbc1238aa134ef9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizedImages:
+  - Language: 0
+    Image: {fileID: 21300000, guid: fc09a00c6dde94c25b701c0342aec74f, type: 3}
+  - Language: 1
+    Image: {fileID: 21300000, guid: 6d08bbd26fee345eeae531e425b7090d, type: 3}
 --- !u!1 &7488340318416302330
 GameObject:
   m_ObjectHideFlags: 0

@@ -33,6 +33,7 @@ public class UI_MainMenu : UI_Scene
         GetImage((int)Images.FrontImage).gameObject.AddUIEvent(SetAnimationOver);
 
         GetButton((int)Buttons.GamePlayButton).gameObject.AddUIEvent(ShowCharacterSelectUI);
+        GetButton((int)Buttons.LangButton).gameObject.AddUIEvent(ChangeLang);
     }
 
     void SetAnimationOver(PointerEventData data)
@@ -56,5 +57,10 @@ public class UI_MainMenu : UI_Scene
         Managers.Sound.Play("Select", Define.Sound.Effect);
         Debug.Log("Show!");
         Managers.UI.ShowPopupUI<UI_CharacterSelect>();
+    }
+
+    void ChangeLang(PointerEventData data)
+    {
+        Managers.I18n.ChangeLang();
     }
 }

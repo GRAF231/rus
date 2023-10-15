@@ -16,6 +16,7 @@ public class Managers : MonoBehaviour
     #endregion
 
     #region core
+    I18NManager _i18n = new I18NManager();
     DataManager _data = new DataManager();
     PoolManager _pool = new PoolManager();
     ResourceManager _resource = new ResourceManager();
@@ -24,6 +25,7 @@ public class Managers : MonoBehaviour
     private EventManager _event = new EventManager();
     private SceneManagerEx _scene = new SceneManagerEx();
 
+    public static I18NManager I18n { get { return Instance._i18n; } }
     public static DataManager Data { get { return Instance._data; } }
     public static PoolManager Pool { get { return Instance._pool; } }
     public static ResourceManager Resource { get { return Instance._resource; } }

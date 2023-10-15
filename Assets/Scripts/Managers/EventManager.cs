@@ -151,7 +151,7 @@ public class EventManager
 
     public void LevelUpEvent()
     {
-        if (Managers.Game.getPlayer().GetComponent<PlayerStat>().Level <= 45)
+        if (Managers.Game.getPlayer().GetComponent<PlayerStat>().Level <= 35)
         {
             Managers.UI.ShowPopupUI<UI_LevelUp>();
             Managers.GamePause();
