@@ -21,28 +21,6 @@
       "moveSpeed": "5",
       "coolDown": "20",
       "amount": "0"
-    },
-    {
-      "id": "3",
-      "name": "player2",
-      "weaponID": "101",
-      "maxHp": "50",
-      "damage": "20",
-      "defense": "1",
-      "moveSpeed": "5.0",
-      "coolDown": "-50",
-      "amount": "1"
-    },
-    {
-      "id": "4",
-      "name": "player3",
-      "weaponID": "102",
-      "maxHp": "50",
-      "damage": "-50",
-      "defense": "-1",
-      "moveSpeed": "6",
-      "coolDown": "100",
-      "amount": "0"
     }
   ]
 } 

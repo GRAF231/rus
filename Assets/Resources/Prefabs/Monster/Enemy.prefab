@@ -181,7 +181,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5a1bcabefc8f043e5a76da9dbe5563e7, type: 3}
   - {fileID: 21300000, guid: 91b55dc745a7f430f859af042751c124, type: 3}
   - {fileID: 21300000, guid: aae7e99fd84c5464d9252a31972a064c, type: 3}
-  - {fileID: 1782705385, guid: d33598d781682e049a53a0a13104ef29, type: 3}
+  - {fileID: 21300000, guid: f700c6e2ac86c4eedb86f0ab62265ff4, type: 3}
   - {fileID: 21300000, guid: cb1d4cefa71b0427faefa76c772a6d57, type: 3}
   _viewSpriteRenderer: {fileID: 7781693147512458165}
   _viewAnimator: {fileID: 3474864168268165736}
