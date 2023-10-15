@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -13,8 +14,12 @@ public class UI_GameOver : UI_Popup
     enum Images
     {
         PretectImg,
-        GameOverImg,
         DeadImg
+    }
+
+    enum Texts
+    {
+        ScoreText
     }
 
     enum Buttons
@@ -30,7 +35,9 @@ public class UI_GameOver : UI_Popup
         anime.runtimeAnimatorController = animeCon[Managers.Game.StartPlayer.id - 1];
         Bind<Image>(typeof(Images));
         Bind<Button>(typeof(Buttons));
+        Bind<TextMeshProUGUI>(typeof(Texts));
 
+        GetText((int)Texts.ScoreText).text = Managers.Game.getPlayer().GetComponent<PlayerStat>().Score.ToString();
         GetImage((int)Images.PretectImg).gameObject.AddUIEvent(OnClickFinishAnime);
         GetButton((int)Buttons.BackToMainButton).gameObject.AddUIEvent(OnClickBackToMain);
 

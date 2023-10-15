@@ -204,8 +204,6 @@ public class BossController : BaseController
 
             SpawnExp();
             _anime.Play("Mushromm_Death");
-            Managers.UI.ShowPopupUI<UI_GameVictory>();
-            Managers.GamePause();
         }
     }
 
