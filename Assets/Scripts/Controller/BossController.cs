@@ -64,7 +64,7 @@ public class BossController : BaseController
 
     public void SetExp(int level)
     {
-        _stat.ExpPoint = 10 * level;
+        _stat.ExpPoint = 3 * level;
         _stat.ExpMul = 10;
 
     }
@@ -190,9 +190,9 @@ public class BossController : BaseController
 
     void FloatDamageText(int damage)
     {
-        GameObject hudText = Instantiate(hudDamageText); // »ý¼ºÇÒ ÅØ½ºÆ® ¿ÀºêÁ§Æ®
-        hudText.transform.position = transform.position + Vector3.up * 1.5f; // Ç¥½ÃµÉ À§Ä¡
-        hudText.GetComponent<UI_DamageText>().damage = damage; // µ¥¹ÌÁö Àü´Þ
+        GameObject hudText = Instantiate(hudDamageText); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ø½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
+        hudText.transform.position = transform.position + Vector3.up * 1.5f; // Ç¥ï¿½Ãµï¿½ ï¿½ï¿½Ä¡
+        hudText.GetComponent<UI_DamageText>().damage = damage; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     }
 
     public override void OnDead()

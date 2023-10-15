@@ -95,7 +95,7 @@ public class EnemyController : BaseController
         _stat.Damage = SetRandomStat((int)(monsterStat.damage * ((100f + level) / 100f)));
         _stat.Defense = SetRandomStat((int)(monsterStat.defense * ((100f + level) / 100f)));
         _rigid.mass = 3;
-        _stat.ExpPoint = 10*level;
+        _stat.ExpPoint = 3*level;
         _stat.ExpMul = monsterStat.expMul;
         if(type == Define.MonsterType.middleBoss)
         {

@@ -9,6 +9,7 @@ public class UI_Player : UI_Scene
     enum Texts
     {
         GameTime,
+        ScoreText,
         LevelText
     }
 
@@ -35,6 +36,7 @@ public class UI_Player : UI_Scene
     {
         SetGameTime();
         SetExpAndLevel();
+        SetScore();
     }
     void SetGameTime()
     {
@@ -52,6 +54,12 @@ public class UI_Player : UI_Scene
             ratio = 1;
         Get<Slider>((int)Sliders.ExpSlider).value = (float)ratio;
         GetText((int)Texts.LevelText).text = player.Level.ToString();
+    }
+
+    void SetScore()
+    {
+        PlayerStat player = Managers.Game.getPlayer().GetOrAddComponent<PlayerStat>();
+        GetText((int)Texts.ScoreText).text = player.Score.ToString();
     }
 
     public void SetWeaponImage(PlayerStat player)

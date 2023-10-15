@@ -14,7 +14,8 @@ public class Exp_Item : Base_Item
         long percentExp = (long)Math.Truncate((double)player.MaxExp / 100);
         if (percentExp > _exp)
             _exp = percentExp;
-        player.Exp += _exp*_expMul;
-    }
+        player.Exp += _exp * _expMul;
 
+        player.Score += _expMul * 3;
+    }
 }

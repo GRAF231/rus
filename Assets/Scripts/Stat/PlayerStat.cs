@@ -5,10 +5,6 @@ using UnityEngine;
 
 public class PlayerStat : Stat
 {
-
-
-    //1 : knife, 2 : firebal, 3: spin, 4: posion 5: lightning 6: shotgun
-    //WeaponDict - WeaponID : WeaponLevel
     Dictionary<string, int> _playerStat = new Dictionary<string, int>();
     [SerializeField]
     Dictionary<Define.Weapons, int> _weaponDict = new Dictionary<Define.Weapons, int>();
@@ -109,19 +105,30 @@ public class PlayerStat : Stat
             if (!_playerStat.ContainsKey("Amount"))
                 _playerStat.Add("Amount", _amount);
             _playerStat["Amount"] = _amount;
-        } 
+        }
+    }
+
+    private long _score;
+    public long Score
+    {
+        get { return _score; }
+        set
+        {
+            _score = value;
+
+        }
     }
 
     private long _exp;
     public long Exp
     {
-        get { return _exp;}
+        get { return _exp; }
         set
         {
             _exp = value;
             while (_exp >= MaxExp)
             {
-               OnLevelUp();
+                OnLevelUp();
             }
         }
     }
@@ -136,8 +143,13 @@ public class PlayerStat : Stat
     private int _cooldown;
     private int _amount;
 
-
-
+#if UNITY_EDITOR
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+            OnLevelUp();
+    }
+#endif
 
     void Awake()
     {
@@ -163,10 +175,10 @@ public class PlayerStat : Stat
     void OnLevelUp()
     {
         Managers.Event.LevelUpEvent();
-
         Level += 1;
         Exp = 0;
-        MaxExp += Math.Max(100, (long)(_maxExp*1.1));
+        MaxExp += Math.Max(100, (long)(_maxExp * 0.1));
+        Debug.Log(MaxExp);
     }
 
     void SetWeaponLevel()
