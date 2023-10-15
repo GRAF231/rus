@@ -3,50 +3,50 @@
         {
             "statID": "1",
             "statName": "MaxHP",
-            "statTitleEn": "MaxHP",
-            "statDescEn": "MaxHP",
-            "statTitleRu": "MaxHP",
-            "statDescRu": "MaxHP"
+            "statTitleEn": "Slavic-Aryan Vedas",
+            "statDescEn": "Healing rites are described here. Any ailment will be cured",
+            "statTitleRu": "Славяно-арийские Веды",
+            "statDescRu": "Обряды целительные здесь описаны. Любую хворь излечат"
         },
         {
             "statID": "2",
             "statName": "MoveSpeed",
-            "statTitleEn": "MoveSpeed",
-            "statDescEn": "MoveSpeed",
-            "statTitleRu": "MoveSpeed",
-            "statDescRu": "MoveSpeed"
+            "statTitleEn": "Boots runners",
+            "statDescEn": "Allow you to catch up with any cursed Lizard",
+            "statTitleRu": "Сапоги скороходы",
+            "statDescRu": "Позволяют догнать любого Ящера проклятого"
         },
         {
             "statID": "3",
             "statName": "Damage",
-            "statTitleEn": "Damage",
-            "statDescEn": "Damage",
-            "statTitleRu": "Damage",
-            "statDescRu": "Damage"
+            "statTitleEn": "A sip of birch juice",
+            "statDescEn": "Gives a heroic strength for a glorious fight",
+            "statTitleRu": "Глоток сока березового",
+            "statDescRu": "Дает силу богатырскую для боя славного"
         },
         {
             "statID": "4",
             "statName": "Defense",
-            "statTitleEn": "Defense",
-            "statDescEn": "Defense",
-            "statTitleRu": "Defense",
-            "statDescRu": "Defense"
+            "statTitleEn": "Svarog 's Shield",
+            "statDescEn": "Protects from the claws and fangs of lizards",
+            "statTitleRu": "Щит Сварога",
+            "statDescRu": "Защищает от когтей и клыков ящерских"
         },
         {
             "statID": "5",
             "statName": "Cooldown",
-            "statTitleEn": "Cooldown",
-            "statDescEn": "Cooldown",
-            "statTitleRu": "Cooldown",
-            "statDescRu": "Cooldown"
+            "statTitleEn": "The Veles Book",
+            "statDescEn": "Sacred wisdom makes it faster to strike deadly hits",
+            "statTitleRu": "Велесова книга",
+            "statDescRu": "Мудрость сакральная дает быстрее наносить удары смертоносные"
         },
         {
             "statID": "6",
             "statName": "Amount",
-            "statTitleEn": "Amount",
-            "statDescEn": "Amount",
-            "statTitleRu": "Amount",
-            "statDescRu": "Amount"
+            "statTitleEn": "Old Russian Braga",
+            "statDescEn": "This potion makes my eyes double! the end of the cursed lizards will come",
+            "statTitleRu": "Брага славянская",
+            "statDescRu": "От зелья сего в глазах двоится! Не поздоровиться ящерам проклятым"
         }
     ]
 }

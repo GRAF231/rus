@@ -153,7 +153,7 @@ namespace Data
             }
 			else if (Managers.I18n.Lang == I18NManager.Language.ru)
             {
-                data.statTitle = data.statDescRu;
+                data.statTitle = data.statTitleRu;
 				data.statDesc = data.statDescRu;
             }
 
