@@ -11,6 +11,7 @@ public class UI_ItemBoxOpen : UI_Popup
     List<Transform> weaponUILocation;
     List<Define.Weapons> weaponList;
     PlayerStat player;
+    bool isOpen = false;
 
     public override Define.PopupUIGroup _popupID { get { return Define.PopupUIGroup.UI_ItemBoxOpen; } }
 
@@ -42,6 +43,12 @@ public class UI_ItemBoxOpen : UI_Popup
 
     void OnOpenChest(PointerEventData data)
     {
+        if (isOpen)
+        {
+            return;
+        }
+        isOpen = true;
+
         Managers.Sound.Play("BoxOpen", Define.Sound.Effect, 0.8f);
         weaponList = Managers.Event.SetRandomWeaponfromItemBox(player);
         if (weaponList == null)
@@ -67,5 +74,6 @@ public class UI_ItemBoxOpen : UI_Popup
         Managers.Sound.Play("Select", Define.Sound.Effect);
         Managers.Event.SetLevelUpWeaponfromItemBox(weaponList, player);
         Managers.UI.CloseAllGroupPopupUI(_popupID);
+        isOpen = false;
     }
 }
