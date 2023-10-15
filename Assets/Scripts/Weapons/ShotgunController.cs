@@ -20,11 +20,14 @@ public class ShotgunController : WeaponController
     private bool _isCool = false;
     private float _bulletTargetRange = 60f;
 
+    Vector2 startScale;
+
     public override int _weaponType { get { return (int)Define.Weapons.Shotgun; } }
 
     void Start()
     {
         _playerController = _player.GetComponent<PlayerController>();
+        startScale = shotgun.transform.localScale;
     }
 
     void Update()
@@ -104,6 +107,19 @@ public class ShotgunController : WeaponController
         _isCool = false;
     }
 
+    void FlipX(bool dir)
+    {
+        if (dir)
+        {
+            shotgun.transform.localScale = startScale;
+        }
+        else
+        {
+            shotgun.transform.localScale = startScale * new Vector2(1, -1);
+        }
+        _playerController._viewSpriteRenderer.flipX = dir;
+    }
+
     Vector2 GetNearbyEnemyPos()
     {
         //Sort Enemies by distance to Weapon
@@ -112,7 +128,7 @@ public class ShotgunController : WeaponController
             .ToList();
 
         lastEnemyPos = nearbyEnemies[0].transform.position;
-        _playerController._viewSpriteRenderer.flipX = lastEnemyPos.x > _player.transform.position.x;
+        FlipX(lastEnemyPos.x > _player.transform.position.x);
         return lastEnemyPos;
     }
 
