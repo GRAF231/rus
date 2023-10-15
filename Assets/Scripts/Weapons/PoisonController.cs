@@ -6,6 +6,7 @@ public class PoisonController : WeaponController
 {
 
     bool _isCool = false;
+    private float _deg = 0;
 
     public override int _weaponType { get { return (int)Define.Weapons.Poison; } }
 
@@ -36,5 +37,19 @@ public class PoisonController : WeaponController
         _isCool = true;
         yield return new WaitForSeconds(_cooldown);
         _isCool = false;
+    }
+
+
+    void FixedUpdate()
+    {
+        _deg += Time.deltaTime;
+        if (_deg < 360)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, _deg * 50f);
+        }
+        else
+        {
+            _deg = 0;
+        }
     }
 }
