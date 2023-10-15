@@ -3,10 +3,10 @@
     {
         "weaponID": "1",
         "weaponName": "Knife",
-        "weaponTitleEn": "Knife",
-        "weaponDescEn": "Knife",
-        "weaponTitleRu": "Knife",
-        "weaponDescRu": "Knife",
+        "weaponTitleEn": "Hammer of Perun",
+        "weaponDescEn": "Makes chops out of the Cursed Lizards",
+        "weaponTitleRu": "Молот Перуна",
+        "weaponDescRu": "Делает отбивные из Ящеров проклятых",
         "weaponLevelData": [
             {
                 "level": "1",
@@ -83,10 +83,10 @@
     {
         "weaponID": "2",
         "weaponName": "Fireball",
-        "weaponTitleEn": "Fireball",
-        "weaponDescEn": "Fireball",
-        "weaponTitleRu": "Fireball",
-        "weaponDescRu": "Fireball",
+        "weaponTitleEn": "The Old Russian flame",
+        "weaponDescEn": "Burns the damned herods to crisp scales",
+        "weaponTitleRu": "Пламя древнерусское",
+        "weaponDescRu": "Обжигает иродов проклятых до хрустящей чешуи",
         "weaponLevelData": [
             {
                 "level": "1",
@@ -243,10 +243,10 @@
     {
         "weaponID": "4",
         "weaponName": "Poison",
-        "weaponTitleEn": "Poison",
-        "weaponDescEn": "Poison",
-        "weaponTitleRu": "Poison",
-        "weaponDescRu": "Poison",
+        "weaponTitleEn": "Red sun",
+        "weaponDescEn": "it lights the way for glorious warriors and burns filthy enemies ",
+        "weaponTitleRu": "Красно солнышко",
+        "weaponDescRu": "освещает путь воинам славным и врагов поганых обжигает",
         "weaponLevelData": [
             {
                 "level": "1",
@@ -324,9 +324,9 @@
         "weaponID": "101",
         "weaponName": "Lightning",
         "weaponTitleEn": "Lightning",
-        "weaponDescEn": "Lightning",
-        "weaponTitleRu": "Lightning",
-        "weaponDescRu": "Lightning",
+        "weaponDescEn": "The wrath of Perun himself will fall on the heads of the Lizards",
+        "weaponTitleRu": "Молния",
+        "weaponDescRu": "Гнев самого Перуна обрушится на головы Ящеров",
         "weaponLevelData": [
             {
                 "level": "1",
@@ -404,9 +404,9 @@
         "weaponID": "102",
         "weaponName": "Shotgun",
         "weaponTitleEn": "Bow",
-        "weaponDescEn": "Bow",
-        "weaponTitleRu": "Bow",
-        "weaponDescRu": "Bow",
+        "weaponDescEn": "Sends ancient Russian arrows straight into the heads of the cursed egg-eaters",
+        "weaponTitleRu": "Лук из березки славянской",
+        "weaponDescRu": "Посылает стрелы древнерусские прямо в головы яйцеложцев окаянных",
         "weaponLevelData": [
             {
                 "level": "1",

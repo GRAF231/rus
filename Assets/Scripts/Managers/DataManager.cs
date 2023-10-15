@@ -21,6 +21,16 @@ public class DataManager
         WeaponData = LoadJson<Data.WeaponDataLoader, int, Data.WeaponData>("WeaponData").MakeDict();
         MonsterData = LoadJson<Data.MonsterData, int, Data.Monster>("MonsterData").MakeDict();
         PlayerStatData = LoadJson<Data.PlayerStatDataLoader, int, Data.PlayerStatData>("PlayerStatData").MakeDict();
+
+        Managers.I18n.OnChangeLanguage += ChangeLanguage;
+    }
+
+    protected void ChangeLanguage(I18NManager.Language lang)
+    {
+        PlayerData = LoadJson<Data.PlayerData, int, Data.Player>("PlayerData").MakeDict();
+        WeaponData = LoadJson<Data.WeaponDataLoader, int, Data.WeaponData>("WeaponData").MakeDict();
+        MonsterData = LoadJson<Data.MonsterData, int, Data.Monster>("MonsterData").MakeDict();
+        PlayerStatData = LoadJson<Data.PlayerStatDataLoader, int, Data.PlayerStatData>("PlayerStatData").MakeDict();
     }
 
     Loader LoadJson<Loader, Key, Value>(string path) where Loader : ILoader<Key, Value>

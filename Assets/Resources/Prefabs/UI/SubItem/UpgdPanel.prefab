@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -113,7 +113,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -10}
-  m_SizeDelta: {x: -29.999996, y: 48}
+  m_SizeDelta: {x: -20, y: 48}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &1003344468954965399
 CanvasRenderer:
@@ -145,8 +145,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Name : \uC2A4\uD0EF \uC774\uB984"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 73f961e277348c744a836a0896929fcc, type: 2}
-  m_sharedMaterial: {fileID: 6608546117220838858, guid: 73f961e277348c744a836a0896929fcc, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ae900813971a54695846ed50b90b3bdb, type: 2}
+  m_sharedMaterial: {fileID: -961806263147924318, guid: ae900813971a54695846ed50b90b3bdb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -170,13 +170,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
+  m_fontSize: 42.95
   m_fontSizeBase: 48
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -470,8 +470,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 80, y: 0}
-  m_SizeDelta: {x: -220, y: -40}
+  m_AnchoredPosition: {x: 85, y: 0}
+  m_SizeDelta: {x: -210, y: -40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1003344470028086042
 CanvasRenderer:
@@ -546,8 +546,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.5, y: -29}
-  m_SizeDelta: {x: -35, y: -78}
+  m_AnchoredPosition: {x: 0, y: -25}
+  m_SizeDelta: {x: -20, y: -70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1003344470856771328
 CanvasRenderer:
@@ -579,8 +579,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uC2A4\uD0EF \uC124\uBA85"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ec7537f9995182340a4abe73b3d1b8fa, type: 2}
-  m_sharedMaterial: {fileID: 7398110494543623533, guid: ec7537f9995182340a4abe73b3d1b8fa, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ae900813971a54695846ed50b90b3bdb, type: 2}
+  m_sharedMaterial: {fileID: -961806263147924318, guid: ae900813971a54695846ed50b90b3bdb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -607,9 +607,9 @@ MonoBehaviour:
   m_fontSize: 32
   m_fontSizeBase: 32
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 14
+  m_fontSizeMax: 32
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -682,7 +682,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 900, y: 200}
+  m_SizeDelta: {x: 900, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3532758921441055875
 MonoBehaviour:
