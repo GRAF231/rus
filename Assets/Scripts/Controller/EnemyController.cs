@@ -6,7 +6,10 @@ public class EnemyController : BaseController
     public GameObject hudDamageText;
     
     protected EnemyStat _stat;
-    public RuntimeAnimatorController[] animeCon;
+    public RuntimeAnimatorController animeCon;
+    public Sprite[] enemySprites;
+    public SpriteRenderer _viewSpriteRenderer;
+    [SerializeField] Animator _viewAnimator;
     public Rigidbody2D _target;
     bool _isLive = true;
     bool _isRange = false;
@@ -62,7 +65,8 @@ public class EnemyController : BaseController
     }
     private void LateUpdate()
     {
-        _sprite.flipX = (_target.position.x - _rigid.position.x < 0) ? true : false;
+        _viewAnimator.SetFloat("speed", _stat.MoveSpeed);
+        _viewSpriteRenderer.flipX = _target.position.x - _rigid.position.x >= 0;
     }
 
     private void OnEnable()
@@ -82,7 +86,8 @@ public class EnemyController : BaseController
                 mul = 50;
                 break;
         }
-        _anime.runtimeAnimatorController = animeCon[monsterStat.id-1];
+        _viewAnimator.runtimeAnimatorController = animeCon;
+        _viewSpriteRenderer.sprite = enemySprites[monsterStat.id - 1];
         if (monsterStat.id == 5)
             _isRange = true;
         if (type == Define.MonsterType.middleBoss)
@@ -119,13 +124,11 @@ public class EnemyController : BaseController
     public override void OnDamaged(int damage, float force = 0)
     {
         Managers.Event.PlayHitEnemyEffectSound();
-        _anime.SetTrigger("Hit");
         int calculateDamage = Mathf.Max(damage - _stat.Defense, 1);
         _stat.HP -= calculateDamage;
         _rigid.AddForce((_rigid.position - _target.position).normalized * (force * 200f));
         FloatDamageText(calculateDamage);
 
-        
         OnDead();
     }
 
@@ -148,7 +151,19 @@ public class EnemyController : BaseController
             Managers.Event.DropItem(_stat,transform);
             transform.localScale = Vector3.one;
             Managers.Game.Despawn(gameObject);
+        } else
+        {
+            StartCoroutine(OnDamagedColor());
         }
+    }
+
+    IEnumerator OnDamagedColor()
+    {
+        _viewSpriteRenderer.color = Color.red;
+
+        yield return new WaitForSeconds(0.1f);
+
+        _viewSpriteRenderer.color = Color.white;
     }
 
     void SpawnExp()

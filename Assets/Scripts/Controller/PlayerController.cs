@@ -87,7 +87,7 @@ public class PlayerController : BaseController
     {
         if (_inputVec.x != 0)
         {
-            _viewSpriteRenderer.flipX = (_inputVec.x < 0) ? false : true;
+            _viewSpriteRenderer.flipX = _inputVec.x >= 0;
         }
     }
 
