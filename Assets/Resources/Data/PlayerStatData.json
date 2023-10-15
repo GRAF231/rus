@@ -13,7 +13,7 @@
             "statName": "MoveSpeed",
             "statTitleEn": "Boots runners",
             "statDescEn": "Allow you to catch up with any cursed Lizard",
-            "statTitleRu": "Sacred wisdom makes it faster to strike deadly hits",
+            "statTitleRu": "Сапоги скороходы",
             "statDescRu": "Позволяют догнать любого Ящера проклятого"
         },
         {
@@ -36,7 +36,7 @@
             "statID": "5",
             "statName": "Cooldown",
             "statTitleEn": "The Veles Book",
-            "statDescEn": "Мудрость сакральная дает быстрее наносить удары смертоносные",
+            "statDescEn": "Sacred wisdom makes it faster to strike deadly hits",
             "statTitleRu": "Велесова книга",
             "statDescRu": "Мудрость сакральная дает быстрее наносить удары смертоносные"
         },
