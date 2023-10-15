@@ -8,11 +8,8 @@ public class SoundManager
     Dictionary<string, AudioClip> _audioClips = new Dictionary<string, AudioClip>();
 
 
-    public float SoundVolumn = 1f;
+    public float SoundVolumn = 0.2f;
     public Define.BGMs BGM = Define.BGMs.A_Bit_Of_Hope;
-    // MP3 Player   -> AudioSource
-    // MP3 음원     -> AudioClip
-    // 관객(귀)     -> AudioListener
 
     public void Init()
     {
@@ -31,6 +28,7 @@ public class SoundManager
             }
 
             _audioSources[(int)Define.Sound.Bgm].loop = true;
+            _audioSources[(int)Define.Sound.Bgm].volume = 0.2f;
         }
     }
 
