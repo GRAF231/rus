@@ -15,7 +15,7 @@ public class EnemyController : BaseController
     bool _isRange = false;
     bool _isAttack = false;
 
-    int max_level = 45;
+    //int max_level = 45;
 
     float speedModification = 0.5f;
 
@@ -79,10 +79,10 @@ public class EnemyController : BaseController
 
     public void Init(Data.Monster monsterStat, int level, Define.MonsterType type)
     {
-        if (level >= max_level)
-        {
-            level = max_level;
-        }
+       // if (level >= max_level)
+       // {
+       //     level = max_level;
+       // }
         int mul = 1;
         switch (type)
         {
