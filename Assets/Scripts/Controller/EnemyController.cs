@@ -17,7 +17,7 @@ public class EnemyController : BaseController
 
     int max_level = 45;
 
-    float speed_modification = 0.5f;
+    float speedModification = 0.5f;
 
     protected override void Init()
     {
@@ -45,7 +45,7 @@ public class EnemyController : BaseController
     void OnMove()
     {
         Vector2 dirVec = _target.position - _rigid.position;
-        Vector2 nextVec = dirVec.normalized * (_stat.MoveSpeed * speed_modification * Time.fixedDeltaTime);
+        Vector2 nextVec = dirVec.normalized * (_stat.MoveSpeed * speedModification * Time.fixedDeltaTime);
 
         _rigid.MovePosition(_rigid.position + nextVec);
         _rigid.velocity = Vector2.zero;
@@ -68,7 +68,7 @@ public class EnemyController : BaseController
     }
     private void LateUpdate()
     {
-        _viewAnimator.SetFloat("speed", _stat.MoveSpeed * speed_modification);
+        _viewAnimator.SetFloat("speed", _stat.MoveSpeed * speedModification);
         _viewSpriteRenderer.flipX = _target.position.x - _rigid.position.x >= 0;
     }
 
