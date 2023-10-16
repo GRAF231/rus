@@ -15,7 +15,7 @@ public class EnemyController : BaseController
     bool _isRange = false;
     bool _isAttack = false;
 
-    //int max_level = 45;
+    const int maxLevel = 45;
 
     float speedModification = 0.5f;
 
@@ -79,10 +79,6 @@ public class EnemyController : BaseController
 
     public void Init(Data.Monster monsterStat, int level, Define.MonsterType type)
     {
-       // if (level >= max_level)
-       // {
-       //     level = max_level;
-       // }
         int mul = 1;
         switch (type)
         {
@@ -102,7 +98,7 @@ public class EnemyController : BaseController
             transform.localScale = Vector3.one * 2;
         _stat.MonsterStyle = (Define.MonsterStyle)System.Enum.Parse(typeof(Define.MonsterStyle), monsterStat.name);
         _stat.MonsterType = type;
-        _stat.MoveSpeed = monsterStat.moveSpeed *((float)(100f+ level)/100f);
+        _stat.MoveSpeed = monsterStat.moveSpeed *((float)(100f+ (level >= maxLevel ? maxLevel : level)) /100f);
         _stat.MaxHP = SetRandomStat((int)(monsterStat.maxHp * ((100f + 10f*level)/ 100f))) * mul;
         _stat.HP = _stat.MaxHP;
         _stat.Damage = SetRandomStat((int)(monsterStat.damage * ((100f + level) / 100f)));
