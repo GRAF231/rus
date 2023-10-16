@@ -9,8 +9,6 @@ using UnityEngine.UI;
 public class UI_GameOver : UI_Popup
 {
     public override Define.PopupUIGroup _popupID { get { return Define.PopupUIGroup.UI_GameOver; } }
-    public RuntimeAnimatorController[] animeCon;
-    Animator anime;
     enum Images
     {
         PretectImg,
@@ -31,8 +29,7 @@ public class UI_GameOver : UI_Popup
     {
         base.Init();
         Managers.Sound.Play("Dead");
-        anime = gameObject.FindChild<Animator>("DeadImg");
-        anime.runtimeAnimatorController = animeCon[Managers.Game.StartPlayer.id - 1];
+
         Bind<Image>(typeof(Images));
         Bind<Button>(typeof(Buttons));
         Bind<TextMeshProUGUI>(typeof(Texts));
@@ -45,7 +42,6 @@ public class UI_GameOver : UI_Popup
 
     void OnClickFinishAnime(PointerEventData data)
     {
-        anime.Play("GameOverAnime", -1, 1f);
         GetButton((int)Buttons.BackToMainButton).gameObject.SetActive(true);
     }
 
