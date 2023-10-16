@@ -155,7 +155,7 @@ public class EventManager
 
     public void LevelUpEvent()
     {
-        if (Managers.Game.getPlayer().GetComponent<PlayerStat>().Level <= 35)
+        if (Managers.Game.getPlayer().GetComponent<PlayerStat>().Level < 35)
         {
             Managers.UI.ShowPopupUI<UI_LevelUp>();
             Managers.GamePause();
@@ -175,7 +175,7 @@ public class EventManager
                     player.HP = player.MaxHP;
                     break;
                 case "MoveSpeed":
-                    player.MoveSpeed += 1;
+                    player.MoveSpeed += 0.5f;
                     break;
                 case "Damage":
                     player.Damage += 10;
