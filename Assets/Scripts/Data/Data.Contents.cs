@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 namespace Data
@@ -12,7 +13,13 @@ namespace Data
 	{
 		public int id;
 		public string name;
-		public int weaponID;
+        public string heroName;
+        public string description;
+        public string heroNameEn;
+        public string descriptionEn;
+        public string heroNameRu;
+        public string descriptionRu;
+        public int weaponID;
 		public int maxHp;
 		public int damage;
 		public int defense;
@@ -26,11 +33,27 @@ namespace Data
 	{
 		public List<Player> players = new List<Player>();
 
-		public Dictionary<int, Player> MakeDict()
+        private Player LocalizePlayer(Player data)
+        {
+            if (Managers.I18n.Lang == I18NManager.Language.en)
+            {
+                data.heroName = data.heroNameEn;
+                data.description = data.descriptionEn;
+            }
+            else if (Managers.I18n.Lang == I18NManager.Language.ru)
+            {
+                data.heroName = data.heroNameRu;
+                data.description = data.descriptionRu;
+            }
+
+            return data;
+        }
+
+        public Dictionary<int, Player> MakeDict()
 		{
 			Dictionary<int, Player> dict = new Dictionary<int, Player>();
 			foreach (Player player in players)
-				dict.Add(player.id, player);
+				dict.Add(player.id, LocalizePlayer(player));
 			return dict;
 		}
 	}

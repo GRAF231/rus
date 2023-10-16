@@ -84,12 +84,14 @@ public class UI_CharacterSelect : UI_Popup
         }
         go.GetComponent<Image>().color = Color.yellow;
         string name = playerStat.name;
-        string desc = $"HP : {playerStat.maxHp}\tDamage : {playerStat.damage}\n" +
-            $"Speed : {playerStat.moveSpeed}\tDefense : {playerStat.defense}\n" +
-            $"Cooldown : {playerStat.coolDown}\tAmount : {playerStat.amount}";
+        string heroName = playerStat.heroName;
+        /* string desc = $"HP : {playerStat.maxHp}\tDamage : {playerStat.damage}\n" +
+             $"Speed : {playerStat.moveSpeed}\tDefense : {playerStat.defense}\n" +
+             $"Cooldown : {playerStat.coolDown}\tAmount : {playerStat.amount}";*/
+        string desc = playerStat.description;
 
         GetImage((int)Images.PlayerImage).sprite = Managers.Resource.LoadSprite(name);
-        GetText((int)Texts.NameText).text = name;
+        GetText((int)Texts.NameText).text = heroName;
         GetText((int)Texts.DescText).text = desc;
     }
     void OnClickDelete(PointerEventData data)
