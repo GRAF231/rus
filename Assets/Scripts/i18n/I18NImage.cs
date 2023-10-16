@@ -17,9 +17,9 @@ public class I18NImage : I18NBase
     [SerializeField] LocalizedImage[] localizedImages = new LocalizedImage[Managers.I18n.LanguageCount];
     Dictionary<I18NManager.Language, Sprite> _imageDictionary;
 
-    protected void Start()
+    protected new void Start()
     {
-        base.Start();
+        Managers.I18n.OnChangeLanguage += ChangeLanguage;
         _image = GetComponent<Image>();
         _imageDictionary = new Dictionary<I18NManager.Language, Sprite>(localizedImages.Length);
 

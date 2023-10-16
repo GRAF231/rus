@@ -34,10 +34,15 @@ public class UI_GameOver : UI_Popup
         Bind<Button>(typeof(Buttons));
         Bind<TextMeshProUGUI>(typeof(Texts));
 
-        GetText((int)Texts.ScoreText).text = Managers.Game.getPlayer().GetComponent<PlayerStat>().Score.ToString();
+        var PlayerScore = Managers.Game.getPlayer().GetComponent<PlayerStat>().Score;
+        GetText((int)Texts.ScoreText).text = PlayerScore.ToString();
         GetImage((int)Images.PretectImg).gameObject.AddUIEvent(OnClickFinishAnime);
         GetButton((int)Buttons.BackToMainButton).gameObject.AddUIEvent(OnClickBackToMain);
 
+        if (PlayerScore > 1000)
+            YandexManager.RateGame();
+
+        YandexManager.SetToLeaderBoard(PlayerScore);
     }
 
     void OnClickFinishAnime(PointerEventData data)

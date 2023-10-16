@@ -4,6 +4,39 @@
         var mobilePattern = /android|iphone|ipad|ipod/i;
 
         return ua.search(mobilePattern) !== -1 || (ua.indexOf("macintosh") !== -1 && "ontouchend" in document);
-    }
+    },
+    GiveMePlayerData: function () {
+		myGameInstance.SendMessage('YandexManager', 'SetName', player.getName());
+        var photo = player.getPhoto("medium");
+        if (photo) {
+		    myGameInstance.SendMessage('YandexManager', 'SetPhoto', );
+        }
+    },
+    RateGame : function (){
+	    ysdk.feedback.canReview()
+            .then(({ value, reason }) => {
+                if (value) {
+                    ysdk.feedback.requestReview()
+                        .then(({ feedbackSent }) => {
+                            console.log(feedbackSent);
+                        })
+                } else {
+                    console.log(reason)
+            }
+        })
+    },
+    SetToLeaderBoard: function(value){
+		ysdk.getLeaderboards()
+		    .then(lb => {
+                lb.setLeaderboardScore('MaxScore', value);
+            });
+    },
+    GetLang : function (){
+	    var lang = ysdk.environment.i18n.lang;
+	    var bufferSize = lengthBytesUTF8(lang) + 1;
+	    var buffer = _malloc(bufferSize);
+	    stringToUTF8(lang, buffer, bufferSize);
+	    return buffer;
+    },
 };  
 mergeInto(LibraryManager.library, MyPlugin);

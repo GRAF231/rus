@@ -54,6 +54,9 @@ public class UI_MainMenu : UI_Scene
     }
     void ShowCharacterSelectUI(PointerEventData data)
     {
+#if !UNITY_EDITOR
+        YandexManager.GiveMePlayerData();
+#endif
         Managers.Sound.Play("Select", Define.Sound.Effect);
         Debug.Log("Show!");
         Managers.UI.ShowPopupUI<UI_CharacterSelect>();

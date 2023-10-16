@@ -20,7 +20,7 @@ public class I18NManager
     public Language Lang
     {
         get;
-        private set;
+        set;
     }
 
     public void ChangeLang()
