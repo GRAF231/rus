@@ -15,6 +15,9 @@ public class EnemyController : BaseController
     bool _isRange = false;
     bool _isAttack = false;
 
+    int max_level = 45;
+
+    float speed_modification = 0.5f;
 
     protected override void Init()
     {
@@ -42,7 +45,7 @@ public class EnemyController : BaseController
     void OnMove()
     {
         Vector2 dirVec = _target.position - _rigid.position;
-        Vector2 nextVec = dirVec.normalized * (_stat.MoveSpeed * Time.fixedDeltaTime);
+        Vector2 nextVec = dirVec.normalized * (_stat.MoveSpeed * speed_modification * Time.fixedDeltaTime);
 
         _rigid.MovePosition(_rigid.position + nextVec);
         _rigid.velocity = Vector2.zero;
@@ -65,7 +68,7 @@ public class EnemyController : BaseController
     }
     private void LateUpdate()
     {
-        _viewAnimator.SetFloat("speed", _stat.MoveSpeed);
+        _viewAnimator.SetFloat("speed", _stat.MoveSpeed * speed_modification);
         _viewSpriteRenderer.flipX = _target.position.x - _rigid.position.x >= 0;
     }
 
@@ -76,6 +79,10 @@ public class EnemyController : BaseController
 
     public void Init(Data.Monster monsterStat, int level, Define.MonsterType type)
     {
+        if (level >= max_level)
+        {
+            level = max_level;
+        }
         int mul = 1;
         switch (type)
         {
@@ -136,9 +143,9 @@ public class EnemyController : BaseController
 
     void FloatDamageText(int damage)
     {
-        GameObject hudText = Instantiate(hudDamageText); // 생성할 텍스트 오브젝트
-        hudText.transform.position = transform.position + Vector3.up*1.5f; // 표시될 위치
-        hudText.GetComponent<UI_DamageText>().damage = damage; // 데미지 전달
+        GameObject hudText = Instantiate(hudDamageText); 
+        hudText.transform.position = transform.position + Vector3.up*1.5f; 
+        hudText.GetComponent<UI_DamageText>().damage = damage; 
     }
 
     public override void OnDead()

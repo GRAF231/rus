@@ -6,8 +6,10 @@ public class Spawner : MonoBehaviour
 {
     Dictionary<int, Data.Monster> monsterStat = new Dictionary<int, Data.Monster>();
     public Transform[] spawnPoint;
-    float _spawnTime = 0.3f;
     bool _isSpawning = false;
+
+    public float _spawnTime = 0.4f;
+
     [SerializeField]
     GameObject[] _spawnUnit;
 
@@ -81,7 +83,20 @@ public class Spawner : MonoBehaviour
             enemy.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length)].position;
             enemy.GetOrAddComponent<EnemyController>().Init(monsterStat[monsterType], level, Define.MonsterType.Enemy);
         }
-        yield return new WaitForSeconds(level < 10 ? _spawnTime * 2 : _spawnTime);
+        if (level <= 10)
+        {
+            _spawnTime = 0.4f;
+        }
+        else if(level <= 30)
+        {
+            _spawnTime = 0.15f;
+        }
+        else
+        {
+            _spawnTime = 0.05f;
+            _maxSpawnUnit = 160;
+        }
+        yield return new WaitForSeconds(_spawnTime);
         _isSpawning = false;
     }
 

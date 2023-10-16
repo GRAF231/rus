@@ -472,8 +472,9 @@ MonoBehaviour:
   - {fileID: 442147181}
   - {fileID: 865145959}
   - {fileID: 741854044}
+  _spawnTime: 0.6
   _spawnUnit: []
-  _maxSpawnUnit: 50
+  _maxSpawnUnit: 80
   enemyCount: 0
 --- !u!1 &1768402193
 GameObject:
