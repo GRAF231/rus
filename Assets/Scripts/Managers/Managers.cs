@@ -59,7 +59,7 @@ public class Managers : MonoBehaviour
             s_instance._sound.Init();
             s_instance._pool.Init();
             s_instance._data.Init();
-#if !UNiTY_EDITOR
+#if !UNITY_EDITOR
             YandexManager.Init();
 #endif
         }

@@ -7,7 +7,7 @@ using UnityEngine;
 public class ItemGetter : MonoBehaviour
 {
     public float _size;
-    private float _movSpeed = 10f;
+    private float _movSpeed = 30f;
     private Transform _player;
 
     private void Awake()

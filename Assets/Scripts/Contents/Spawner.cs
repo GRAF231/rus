@@ -74,7 +74,42 @@ public class Spawner : MonoBehaviour
     IEnumerator SpawnMonster()
     {
         _isSpawning = true;
-        int level = _playerStat.Level;
+        int level;
+        if (_playerStat.Level < 10)
+        {
+            level = (int)Managers.GameTime / 20;
+        }
+        else if (_playerStat.Level < 35)
+        {
+            level = (int)Managers.GameTime / 10;
+        }
+        else
+        {
+            level = (int)Managers.GameTime / 5;
+        } 
+
+        if (level <= 4)
+        {
+            _spawnTime = 0.8f;
+            _maxSpawnUnit = 20;
+
+        }
+        else if (level <= 8)
+        {
+            _spawnTime = 0.6f;
+            _maxSpawnUnit = 60;
+        }
+        else if (level <= 75)
+        {
+            _spawnTime = 0.15f;
+            _maxSpawnUnit = 80;
+        }
+        else
+        {
+            _spawnTime = 0.05f;
+            _maxSpawnUnit = 120;
+        }
+
         if (enemyCount < _maxSpawnUnit)
         {
             int monsterType = SetRandomMonster(timeLevel);
@@ -83,19 +118,7 @@ public class Spawner : MonoBehaviour
             enemy.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length)].position;
             enemy.GetOrAddComponent<EnemyController>().Init(monsterStat[monsterType], level, Define.MonsterType.Enemy);
         }
-        if (level <= 10)
-        {
-            _spawnTime = 0.4f;
-        }
-        else if(level <= 30)
-        {
-            _spawnTime = 0.15f;
-        }
-        else
-        {
-            _spawnTime = 0.05f;
-            _maxSpawnUnit = 160;
-        }
+
         yield return new WaitForSeconds(_spawnTime);
         _isSpawning = false;
     }

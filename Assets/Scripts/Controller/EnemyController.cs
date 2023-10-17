@@ -89,6 +89,7 @@ public class EnemyController : BaseController
                 mul = 50;
                 break;
         }
+
         _viewAnimator.runtimeAnimatorController = animeCon;
         _viewSpriteRenderer.sprite = enemySprites[monsterStat.id - 1];
         _viewSpriteRenderer.color = Color.white;
@@ -98,7 +99,7 @@ public class EnemyController : BaseController
             transform.localScale = Vector3.one * 2;
         _stat.MonsterStyle = (Define.MonsterStyle)System.Enum.Parse(typeof(Define.MonsterStyle), monsterStat.name);
         _stat.MonsterType = type;
-        _stat.MoveSpeed = monsterStat.moveSpeed *((float)(100f+ (level >= maxLevel ? maxLevel : level)) /100f);
+        _stat.MoveSpeed = monsterStat.moveSpeed *((float)(100f + (level >= maxLevel ? maxLevel : level)) /100f);
         _stat.MaxHP = SetRandomStat((int)(monsterStat.maxHp * ((100f + 10f*level)/ 100f))) * mul;
         _stat.HP = _stat.MaxHP;
         _stat.Damage = SetRandomStat((int)(monsterStat.damage * ((100f + level) / 100f)));

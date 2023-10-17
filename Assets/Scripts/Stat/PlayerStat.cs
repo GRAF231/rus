@@ -177,7 +177,7 @@ public class PlayerStat : Stat
         Managers.Event.LevelUpEvent();
         Level += 1;
         Exp = 0;
-        MaxExp += Math.Max(100, (long)(_maxExp * 0.1));
+        MaxExp += Math.Max(100, (long)(_maxExp * 0.25));
         Debug.Log(MaxExp);
     }
 
