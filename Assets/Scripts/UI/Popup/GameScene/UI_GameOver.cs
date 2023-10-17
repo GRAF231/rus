@@ -38,11 +38,13 @@ public class UI_GameOver : UI_Popup
         GetText((int)Texts.ScoreText).text = PlayerScore.ToString();
         GetImage((int)Images.PretectImg).gameObject.AddUIEvent(OnClickFinishAnime);
         GetButton((int)Buttons.BackToMainButton).gameObject.AddUIEvent(OnClickBackToMain);
-#if !UNiTY_EDITOR
+
+#if !UNITY_EDITOR
         if (PlayerScore > 1000)
             YandexManager.RateGame();
 
-        YandexManager.SetToLeaderBoard(PlayerScore);
+        var timeInMilliSeconds = Managers.GameTime * 1000;
+        YandexManager.SetToLeaderBoard((int)timeInMilliSeconds, PlayerScore);
 #endif
     }
 

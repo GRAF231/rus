@@ -15,7 +15,7 @@ public class EnemyController : BaseController
     bool _isRange = false;
     bool _isAttack = false;
 
-    const int maxLevel = 45;
+    const int maxLevel = 60;
 
     float speedModification = 0.5f;
 
@@ -178,7 +178,7 @@ public class EnemyController : BaseController
         Exp_Item expPoint = expGo.GetComponent<Exp_Item>();
         expPoint._exp = _stat.ExpPoint;
         expPoint._expMul = _stat.ExpMul;
-        
+
         if (expPoint._expMul == 1)
             expGo.GetComponent<SpriteRenderer>().sprite = expPoint._sprite[0];
         else if(expPoint._expMul == 2)

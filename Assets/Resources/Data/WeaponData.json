@@ -191,7 +191,7 @@
                 {
                     "level": "3",
                     "damage": "30",
-                    "movSpeed": "200",
+                    "movSpeed": "160",
                     "force": "2",
                     "cooldown": "0",
                     "size": "1",
@@ -201,7 +201,7 @@
                 {
                     "level": "4",
                     "damage": "30",
-                    "movSpeed": "300",
+                    "movSpeed": "180",
                     "force": "2",
                     "cooldown": "0",
                     "size": "1",
@@ -210,8 +210,8 @@
                 },
                 {
                     "level": "5",
-                    "damage": "40",
-                    "movSpeed": "300",
+                    "damage": "36",
+                    "movSpeed": "200",
                     "force": "2",
                     "cooldown": "0",
                     "size": "1",
@@ -221,7 +221,7 @@
                 {
                     "level": "6",
                     "damage": "40",
-                    "movSpeed": "300",
+                    "movSpeed": "200",
                     "force": "2",
                     "cooldown": "0",
                     "size": "1",
@@ -230,8 +230,8 @@
                 },
                 {
                     "level": "7",
-                    "damage": "50",
-                    "movSpeed": "300",
+                    "damage": "47",
+                    "movSpeed": "250",
                     "force": "2",
                     "cooldown": "0",
                     "size": "1",
@@ -310,7 +310,7 @@
                 },
                 {
                     "level": "7",
-                    "damage": "46",
+                    "damage": "40",
                     "movSpeed": "0",
                     "force": "2",
                     "cooldown": "0.5",

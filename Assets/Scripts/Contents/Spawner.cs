@@ -55,9 +55,14 @@ public class Spawner : MonoBehaviour
             Boss = Managers.Game.Spawn(Define.WorldObject.Enemy, "Monster/Enemy");
             Boss.GetOrAddComponent<EnemyController>().Init(monsterStat[timeLevel], level, Define.MonsterType.middleBoss);
         }
-        else
+        else if (timeLevel == 5)
         {
             Boss = Managers.Game.Spawn(Define.WorldObject.Enemy, "Monster/Boss");
+        }
+        else
+        {
+            Boss = Managers.Game.Spawn(Define.WorldObject.Enemy, "Monster/Enemy");
+            Boss.GetOrAddComponent<EnemyController>().Init(monsterStat[Random.Range(0, 5)], level, Define.MonsterType.middleBoss);
         }
         if (Boss == null)
         {
@@ -79,14 +84,22 @@ public class Spawner : MonoBehaviour
         {
             level = (int)Managers.GameTime / 20;
         }
-        else if (_playerStat.Level < 35)
+        else if (_playerStat.Level < 20)
+        {
+            level = (int)Managers.GameTime / 15;
+        }
+        else if (_playerStat.Level < 30)
         {
             level = (int)Managers.GameTime / 10;
+        }
+        else if (_playerStat.Level < 35)
+        {
+            level = (int)Managers.GameTime / 8;
         }
         else
         {
             level = (int)Managers.GameTime / 5;
-        } 
+        }
 
         if (level <= 4)
         {
@@ -99,7 +112,12 @@ public class Spawner : MonoBehaviour
             _spawnTime = 0.6f;
             _maxSpawnUnit = 60;
         }
-        else if (level <= 75)
+        else if (level <= 35)
+        {
+            _spawnTime = 0.3f;
+            _maxSpawnUnit = 70;
+        }
+        else if (level <= 60)
         {
             _spawnTime = 0.15f;
             _maxSpawnUnit = 80;
@@ -143,8 +161,10 @@ public class Spawner : MonoBehaviour
             else
                 rd = 4;
         }
-        else
+        else if (_playerStat.Level >= 10)
+        {
             rd = 5;
+        }
 
         return rd;
     }

@@ -8,6 +8,7 @@ public class Managers : MonoBehaviour
 {
     static Managers s_instance;
     public static Managers Instance { get { Init(); return s_instance; } }
+    public int DefaultTimeScale = 1;
 
     #region Contents
     GameManagerEx _game = new GameManagerEx();
@@ -92,7 +93,7 @@ public class Managers : MonoBehaviour
 
     public static void GamePlay()
     {
-        Time.timeScale = 1;
+        Time.timeScale = Instance.DefaultTimeScale;
         Managers.gameStop = false;
     }
 }

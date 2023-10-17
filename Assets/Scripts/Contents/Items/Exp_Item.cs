@@ -12,11 +12,7 @@ public class Exp_Item : Base_Item
 
     public override void OnItemEvent(PlayerStat player)
     {
-       /* long percentExp = (long)Math.Truncate((double)player.MaxExp / 100);
-        if (percentExp > _exp)
-            _exp = percentExp;*/
         player.Exp += _exp * _expMul;
-        UnityEngine.Debug.Log(player.MaxExp);
         player.Score += _expMul * 3;
     }
 }

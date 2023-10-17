@@ -13,7 +13,7 @@ public class YandexManager : MonoBehaviour
     [DllImport("__Internal")]
     public static extern string GetLang();
     [DllImport("__Internal")]
-    public static extern void SetToLeaderBoard(long score);
+    public static extern void SetToLeaderBoard(int time, long score);
 
     static YandexManager s_instance;
     public static YandexManager Instance { get { Init(); return s_instance; } }

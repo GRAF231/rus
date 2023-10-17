@@ -1,4 +1,6 @@
-﻿var MyPlugin = {
+﻿
+
+var MyPlugin = {
     IsMobile: function () {
         var ua = window.navigator.userAgent.toLowerCase();
         var mobilePattern = /android|iphone|ipad|ipod/i;
@@ -25,11 +27,33 @@
             }
         })
     },
-    SetToLeaderBoard: function(value){
-		ysdk.getLeaderboards()
-		    .then(lb => {
-                lb.setLeaderboardScore('MaxScore', value);
-            });
+    SetToLeaderBoard: function(time, score){
+        function SetScoreToLeaderBoard(name, value) {
+            ysdk.getLeaderboards()
+                .then(lb => lb.getLeaderboardPlayerEntry(name))
+                .then(res => {
+                    if(res.score < value) {
+                        ysdk.getLeaderboards()
+                        .then(lb => {
+                            lb.setLeaderboardScore(name, value);
+                        });
+                    }
+                })
+                .catch(err => {
+                    if (err.code === 'LEADERBOARD_PLAYER_NOT_PRESENT') {
+                        ysdk.getLeaderboards()
+                            .then(lb => {
+                                lb.setLeaderboardScore(name, value);
+                            });
+                    }
+                });
+        }
+
+        SetScoreToLeaderBoard('MaxScore', score);
+
+        setTimeout(function() {
+            SetScoreToLeaderBoard('MaxTime', time);
+        }, 1500) 
     },
     GetLang : function (){
 	    var lang = ysdk.environment.i18n.lang;

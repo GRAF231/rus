@@ -2,6 +2,7 @@ using UnityEngine;
 
 public abstract class Base_Item : MonoBehaviour
 {
+    private float _liveTimeLeft = 60;
     public Transform target { get; set; } = null;
 
     public abstract void OnItemEvent(PlayerStat player);

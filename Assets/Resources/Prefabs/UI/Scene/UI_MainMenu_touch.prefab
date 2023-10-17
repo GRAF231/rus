@@ -287,9 +287,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   localizedImages:
-  - Language: 0
-    Image: {fileID: 21300000, guid: 6d08bbd26fee345eeae531e425b7090d, type: 3}
   - Language: 1
+    Image: {fileID: 21300000, guid: 6d08bbd26fee345eeae531e425b7090d, type: 3}
+  - Language: 0
     Image: {fileID: 21300000, guid: fc09a00c6dde94c25b701c0342aec74f, type: 3}
 --- !u!1 &7488340318416302330
 GameObject:
