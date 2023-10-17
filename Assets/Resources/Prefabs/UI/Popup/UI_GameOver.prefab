@@ -548,9 +548,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dc9c3f998dd4f44b812145c5ae7611b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animeCon:
-  - {fileID: 9100000, guid: f970d2c6ac201de4ea3e1ec587dbf5c3, type: 2}
-  - {fileID: 22100000, guid: 632b9017679d2cd4a9e6239b42bbdc1c, type: 2}
 --- !u!1 &6646061122663711114
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,6 +559,7 @@ GameObject:
   - component: {fileID: 6646061122663711115}
   - component: {fileID: 6646061122663711113}
   - component: {fileID: 6646061122663711112}
+  - component: {fileID: 8507523346078336620}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -686,3 +684,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8507523346078336620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6646061122663711114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3b702f3f7d3c4d56ba5b9e3e23d06ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizedTexts:
+  - Language: 0
+    Text: Menu
+  - Language: 1
+    Text: "\u041C\u0435\u043D\u044E"

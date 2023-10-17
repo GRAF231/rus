@@ -17,10 +17,15 @@ public class I18NManager
 
     public event Action<Language> OnChangeLanguage;
 
+    private Language _lang;
     public Language Lang
     {
-        get;
-        set;
+        get { return _lang; }
+        set
+        {
+            currentLanguageIndex = (int)value;
+            _lang = value;
+        }
     }
 
     public void ChangeLang()

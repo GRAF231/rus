@@ -85,7 +85,7 @@ public class UIManager
 
     public T ShowPopupUI<T>(string name = null, bool forEffect = false) where T : UI_Popup
     {
-        Managers.Sound.SetAudioVolumn(Define.Sound.Bgm, Managers.Sound.SoundVolumn/2);
+        Managers.Sound.SetAudioVolumn(Define.Sound.Bgm, Managers.Sound.SoundVolume/2);
 
         if (string.IsNullOrEmpty(name))
             name = typeof(T).Name;
@@ -198,7 +198,7 @@ public class UIManager
             
         if (_popupStackDict.Count == 0)
         {
-            Managers.Sound.SetAudioVolumn(Define.Sound.Bgm, Managers.Sound.SoundVolumn);
+            Managers.Sound.SetAudioVolumn(Define.Sound.Bgm, Managers.Sound.SoundVolume);
             Managers.GamePlay();
         }
     }

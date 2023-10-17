@@ -18,9 +18,9 @@ public class I18NText : I18NBase
     [SerializeField] LocalizedText[] localizedTexts = new LocalizedText[Managers.I18n.LanguageCount];
     Dictionary<I18NManager.Language, string> _textDictionary;
 
-    protected void Start()
+    protected new void Start()
     {
-        base.Start();
+        Managers.I18n.OnChangeLanguage += ChangeLanguage;
         _text = GetComponent<TextMeshProUGUI>();
         _textDictionary = new Dictionary<I18NManager.Language, string>(localizedTexts.Length);
 

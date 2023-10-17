@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class UI_Player : UI_Scene
 {
+    public Button PauseButton;
     enum Texts
     {
         GameTime,
@@ -84,5 +85,10 @@ public class UI_Player : UI_Scene
         GameObject cursorCoolTimeImgGo = Get<Image>((int)Images.CursorCoolTimeImg).gameObject;
 
         cursorCoolTimeImgGo.SetActive(true);
+    }
+
+    public void OnPauseClick()
+    {
+        GameScene.TogglePauseMenu();
     }
 }

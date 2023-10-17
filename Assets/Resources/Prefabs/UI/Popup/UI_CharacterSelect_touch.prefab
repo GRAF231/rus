@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 162935798}
   - component: {fileID: 162935800}
   - component: {fileID: 162935799}
+  - component: {fileID: 5698563122897995958}
   m_Layer: 5
   m_Name: StartButtonText
   m_TagString: Untagged
@@ -190,8 +191,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Start
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ae900813971a54695846ed50b90b3bdb, type: 2}
+  m_sharedMaterial: {fileID: 5951216458188766566, guid: ae900813971a54695846ed50b90b3bdb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -215,12 +216,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 56
+  m_fontSize: 53.7
   m_fontSizeBase: 56
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 56
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -251,12 +252,29 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 5, y: 5, z: 5, w: 5}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5698563122897995958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162935797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3b702f3f7d3c4d56ba5b9e3e23d06ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizedTexts:
+  - Language: 0
+    Text: Start
+  - Language: 1
+    Text: "\u041D\u0430\u0447\u0430\u0442\u044C"
 --- !u!1 &305959742
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,8 +348,8 @@ MonoBehaviour:
     amePlayerN amePlayerNamePla yerName PlayerNamePlayerN amePlayerN amePlayerNamePla
     yerName PlayerNamePlayerN amePlayerN amePlayerNamePla yerName '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ec7537f9995182340a4abe73b3d1b8fa, type: 2}
-  m_sharedMaterial: {fileID: 7398110494543623533, guid: ec7537f9995182340a4abe73b3d1b8fa, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ae900813971a54695846ed50b90b3bdb, type: 2}
+  m_sharedMaterial: {fileID: 5951216458188766566, guid: ae900813971a54695846ed50b90b3bdb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -632,8 +650,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: PlayerName
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ec7537f9995182340a4abe73b3d1b8fa, type: 2}
-  m_sharedMaterial: {fileID: 7398110494543623533, guid: ec7537f9995182340a4abe73b3d1b8fa, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ae900813971a54695846ed50b90b3bdb, type: 2}
+  m_sharedMaterial: {fileID: 5951216458188766566, guid: ae900813971a54695846ed50b90b3bdb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -657,13 +675,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 64.4
   m_fontSizeBase: 72
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -673,9 +691,9 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 1
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1

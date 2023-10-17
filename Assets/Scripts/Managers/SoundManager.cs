@@ -7,12 +7,13 @@ public class SoundManager
     AudioSource[] _audioSources = new AudioSource[(int)Define.Sound.MaxCount];
     Dictionary<string, AudioClip> _audioClips = new Dictionary<string, AudioClip>();
 
-
-    public float SoundVolumn = 0.2f;
+    public float InitVolume { get; private set; } = 0.2f;
+    public float SoundVolume;
     public Define.BGMs BGM = Define.BGMs.A_Bit_Of_Hope;
 
     public void Init()
     {
+        SoundVolume = InitVolume;
         GameObject root = GameObject.Find("@Sound");
         if (root == null)
         {

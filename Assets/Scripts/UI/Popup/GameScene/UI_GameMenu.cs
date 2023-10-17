@@ -10,7 +10,6 @@ public class UI_GameMenu : UI_Popup
 
     enum Buttons
     {
-        PlayerStatButton,
         BackToGameButton,
         BackToMainButton
     }
@@ -24,8 +23,6 @@ public class UI_GameMenu : UI_Popup
     {
         MenuText,
         SoundText,
-        SoundSelectText
-
     }
 
     enum Sliders
@@ -33,14 +30,10 @@ public class UI_GameMenu : UI_Popup
         VolumeSlider
     }
 
-    enum Dropdowns
-    {
-        BGMSelectorDD
-    }
-
-
     Slider volumnSlider;
     TMP_Dropdown BGMdropdown;
+
+    public Image MuteImage;
 
     public override Define.PopupUIGroup _popupID
     {
@@ -52,19 +45,21 @@ public class UI_GameMenu : UI_Popup
         Bind<Button>(typeof(Buttons));
         Bind<Image>(typeof(Images));
         Bind<TextMeshProUGUI>(typeof(Texts));
-        Bind<Slider>(typeof(Sliders));
-        Bind<TMP_Dropdown>(typeof(Dropdowns));
 
         GetImage((int)Images.BackgroundImage).gameObject.AddUIEvent(OnBackToGame);
         GetButton((int)Buttons.BackToGameButton).gameObject.AddUIEvent(OnBackToGame);
         GetButton((int)Buttons.BackToMainButton).gameObject.AddUIEvent(OnBackToMain);
-        GetButton((int)Buttons.PlayerStatButton).gameObject.AddUIEvent(OnShowPlayerStatUI);
 
-        volumnSlider = Get<Slider>((int)Sliders.VolumeSlider);
-        BGMdropdown = Get<TMP_Dropdown>((int)Dropdowns.BGMSelectorDD);
-
-        volumnSlider.value = Managers.Sound.SoundVolumn;
-        BGMdropdown.value = (int)Managers.Sound.BGM;
+        if (Util.isMobile())
+        {
+            MuteImage.gameObject.SetActive(Managers.Sound.SoundVolume == 0);
+        }
+        else
+        {
+            Bind<Slider>(typeof(Sliders));
+            volumnSlider = Get<Slider>((int)Sliders.VolumeSlider);
+            volumnSlider.value = Managers.Sound.SoundVolume;
+        }
     }
 
 
@@ -80,22 +75,18 @@ public class UI_GameMenu : UI_Popup
         Managers.GamePlay();
     }
 
-    void OnShowPlayerStatUI(PointerEventData data)
+    public void OnSoundButtonClick()
     {
-        Managers.Sound.Play("Select", Define.Sound.Effect);
-        Managers.UI.ShowPopupUI<UI_PlayerStat>();
+        Managers.Sound.SoundVolume = Managers.Sound.SoundVolume == 0 ? Managers.Sound.InitVolume : 0;
+        MuteImage.gameObject.SetActive(Managers.Sound.SoundVolume == 0);
+        Managers.Sound.SetAudioVolumn(Define.Sound.Bgm, Managers.Sound.SoundVolume);
+        Managers.Sound.SetAudioVolumn(Define.Sound.Effect, Managers.Sound.SoundVolume);
     }
 
     public void OnVolumnChanged()
     {
-        Managers.Sound.SoundVolumn = volumnSlider.value;
+        Managers.Sound.SoundVolume = volumnSlider.value;
         Managers.Sound.SetAudioVolumn(Define.Sound.Bgm, volumnSlider.value);
         Managers.Sound.SetAudioVolumn(Define.Sound.Effect, volumnSlider.value);
-    }
-
-    public void OnValueChanged()
-    {
-        
-        Managers.Sound.Play(((Define.BGMs)BGMdropdown.value).ToString(), Define.Sound.Bgm);
     }
 }
