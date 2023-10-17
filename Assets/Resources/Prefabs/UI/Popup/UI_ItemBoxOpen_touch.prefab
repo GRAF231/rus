@@ -248,10 +248,10 @@ RectTransform:
   m_Father: {fileID: 9009534861086383412}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -29}
-  m_SizeDelta: {x: 400, y: 72}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -29.000061}
+  m_SizeDelta: {x: -40, y: 72}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &3581888596660419665
 CanvasRenderer:
@@ -281,10 +281,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: What's new
+  m_text: Gifts from Perun
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 75f55514d613fab46ab145da2e6e4580, type: 2}
-  m_sharedMaterial: {fileID: -1743525736288641942, guid: 75f55514d613fab46ab145da2e6e4580, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ae900813971a54695846ed50b90b3bdb, type: 2}
+  m_sharedMaterial: {fileID: 5951216458188766566, guid: ae900813971a54695846ed50b90b3bdb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -314,7 +314,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -364,9 +364,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   localizedTexts:
   - Language: 0
-    Text: What's new
+    Text: Gifts from Perun
   - Language: 1
-    Text: "\u0427\u0442\u043E \u0442\u0443\u0442 \u043D\u043E\u0432\u043E\u0433\u043E"
+    Text: "\u0414\u0430\u0440\u044B \u041F\u0435\u0440\u0443\u043D\u0430"
 --- !u!1 &2321657190062025288
 GameObject:
   m_ObjectHideFlags: 0
