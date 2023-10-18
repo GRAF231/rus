@@ -6,14 +6,23 @@ using TMPro;
 using UnityEngine.EventSystems;
 using System;
 
+
+
 public class UpgdPanel : UI_Base
 {
+    Dictionary<I18NManager.Language, string[]> localizeType = new Dictionary<I18NManager.Language, string[]>(2)
+    {
+        { I18NManager.Language.en, new string[] { "Weapon", "Skill", "Weapon" } },
+        { I18NManager.Language.ru, new string[] { "Оружие", "Навык", "Оружие" } }
+    };
+
     int itemType;
     string itemName;
     enum Texts
     {
         UpgdTitleText,
-        UpgdDescText
+        UpgdDescText,
+        UpgdTypeText
     }
 
     enum Images
@@ -25,6 +34,7 @@ public class UpgdPanel : UI_Base
     }
     public override void Init()
     {
+
         Bind<TextMeshProUGUI>(typeof(Texts));
         Bind<Image>(typeof(Images));
 
@@ -50,5 +60,6 @@ public class UpgdPanel : UI_Base
     {
         itemType = data.Type;
         itemName = data.Name;
+        Get<TextMeshProUGUI>((int)Texts.UpgdTypeText).text = localizeType[Managers.I18n.Lang][itemType];
     }
 }

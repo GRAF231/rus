@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -60,6 +61,7 @@ public class Managers : MonoBehaviour
             s_instance._sound.Init();
             s_instance._pool.Init();
             s_instance._data.Init();
+
 #if !UNITY_EDITOR
             YandexManager.Init();
 #endif

@@ -26,11 +26,11 @@
                     "cooldown": "2",
                     "size": "1",
                     "penetrate": "1",
-                    "countPerCreate": "2"
+                    "countPerCreate": "1"
                 },
                 {
                     "level": "3",
-                    "damage": "35",
+                    "damage": "25",
                     "movSpeed": "10",
                     "force": "2",
                     "cooldown": "2",
@@ -40,17 +40,27 @@
                 },
                 {
                     "level": "4",
-                    "damage": "40",
+                    "damage": "30",
                     "movSpeed": "10",
                     "force": "2",
                     "cooldown": "2",
                     "size": "1",
                     "penetrate": "1",
-                    "countPerCreate": "3"
+                    "countPerCreate": "2"
                 },
                 {
                     "level": "5",
-                    "damage": "45",
+                    "damage": "35",
+                    "movSpeed": "10",
+                    "force": "2",
+                    "cooldown": "1.5",
+                    "size": "1",
+                    "penetrate": "1",
+                    "countPerCreate": "2"
+                },
+                {
+                    "level": "6",
+                    "damage": "36",
                     "movSpeed": "10",
                     "force": "2",
                     "cooldown": "1.5",
@@ -59,24 +69,14 @@
                     "countPerCreate": "3"
                 },
                 {
-                    "level": "6",
-                    "damage": "45",
-                    "movSpeed": "10",
+                    "level": "7",
+                    "damage": "40",
+                    "movSpeed": "15",
                     "force": "2",
                     "cooldown": "1.5",
                     "size": "1",
                     "penetrate": "1",
-                    "countPerCreate": "4"
-                },
-                {
-                    "level": "7",
-                    "damage": "55",
-                    "movSpeed": "10",
-                    "force": "2",
-                    "cooldown": "1.2",
-                    "size": "1",
-                    "penetrate": "1",
-                    "countPerCreate": "4"
+                    "countPerCreate": "3"
                 }
             ]
         },

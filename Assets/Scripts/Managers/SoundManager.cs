@@ -7,7 +7,7 @@ public class SoundManager
     AudioSource[] _audioSources = new AudioSource[(int)Define.Sound.MaxCount];
     Dictionary<string, AudioClip> _audioClips = new Dictionary<string, AudioClip>();
 
-    public float InitVolume { get; private set; } = 0.2f;
+    public float InitVolume { get; private set; } = 1;
     public float SoundVolume;
     public Define.BGMs BGM = Define.BGMs.A_Bit_Of_Hope;
 
@@ -29,7 +29,8 @@ public class SoundManager
             }
 
             _audioSources[(int)Define.Sound.Bgm].loop = true;
-            _audioSources[(int)Define.Sound.Bgm].volume = 0.2f;
+            _audioSources[(int)Define.Sound.Bgm].volume = 1;
+            _audioSources[(int)Define.Sound.Effect].volume = 1;
         }
     }
 

@@ -23,6 +23,7 @@ public class UI_MainMenu : UI_Scene
     {
         GamePlayButton,
         LangButton,
+        ScoreButton,
     }
 
     public override void Init()
@@ -34,6 +35,7 @@ public class UI_MainMenu : UI_Scene
 
         GetButton((int)Buttons.GamePlayButton).gameObject.AddUIEvent(ShowCharacterSelectUI);
         GetButton((int)Buttons.LangButton).gameObject.AddUIEvent(ChangeLang);
+        GetButton((int)Buttons.ScoreButton).gameObject.AddUIEvent(GetLeaderBoard);
     }
 
     void SetAnimationOver(PointerEventData data)
@@ -65,5 +67,10 @@ public class UI_MainMenu : UI_Scene
     void ChangeLang(PointerEventData data)
     {
         Managers.I18n.ChangeLang();
+    }
+
+    void GetLeaderBoard(PointerEventData data)
+    {
+        Managers.UI.ShowPopupUI<UI_LeaderBoard>();
     }
 }

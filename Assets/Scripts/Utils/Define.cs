@@ -59,7 +59,8 @@ public class Define
         UI_GameOver,
         UI_GameVictory,
         UI_TimeStop,
-        UI_CharacterSelect
+        UI_CharacterSelect,
+        UI_LeaderBoard,
     }
 
     public enum SceneUI

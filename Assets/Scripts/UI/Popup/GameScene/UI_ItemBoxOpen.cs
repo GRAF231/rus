@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -11,7 +12,6 @@ public class UI_ItemBoxOpen : UI_Popup
     List<Transform> weaponUILocation;
     List<Define.Weapons> weaponList;
     PlayerStat player;
-    bool isOpen = false;
 
     public override Define.PopupUIGroup _popupID { get { return Define.PopupUIGroup.UI_ItemBoxOpen; } }
 
@@ -38,17 +38,11 @@ public class UI_ItemBoxOpen : UI_Popup
         Bind<Image>(typeof(Images));
         Bind<Button>(typeof(Buttons));
 
-        GetImage((int)Images.BackgroundImg).gameObject.AddUIEvent(OnOpenChest);
+        OpenChest();
     }
 
-    void OnOpenChest(PointerEventData data)
+    void OpenChest()
     {
-        if (isOpen)
-        {
-            return;
-        }
-        isOpen = true;
-
         Managers.Sound.Play("BoxOpen", Define.Sound.Effect, 0.8f);
         weaponList = Managers.Event.SetRandomWeaponfromItemBox(player);
         if (weaponList == null)
@@ -57,12 +51,13 @@ public class UI_ItemBoxOpen : UI_Popup
             Util.FindChild<Image>(go, "WeaponImg", true).sprite = Managers.Resource.LoadSprite("Health");
         }
         else
+        {
             for (int i = 0; i < weaponList.Count; i++)
             {
                 GameObject go = Managers.Resource.Instantiate("UI/SubItem/WeaponInven", parent: weaponUILocation[i].transform);
                 Util.FindChild<Image>(go, "WeaponImg", true).sprite = Managers.Resource.LoadSprite(weaponList[i].ToString());
             }
-        Get<Image>((int)Images.ItemBoxImage).GetComponent<Animator>().Play("Open");
+        }
 
         Button btn = GetButton((int)Buttons.ItemBoxButton);
         btn.gameObject.SetActive(true);
@@ -74,6 +69,5 @@ public class UI_ItemBoxOpen : UI_Popup
         Managers.Sound.Play("Select", Define.Sound.Effect);
         Managers.Event.SetLevelUpWeaponfromItemBox(weaponList, player);
         Managers.UI.CloseAllGroupPopupUI(_popupID);
-        isOpen = false;
     }
 }

@@ -55,6 +55,16 @@ var MyPlugin = {
             SetScoreToLeaderBoard('MaxTime', time);
         }, 1500) 
     },
+    GetLeaderBoardEntries: function() {
+        ysdk.getLeaderboards()
+            .then(lb => {
+            // Получение 10 топов и 3 записей возле пользователя
+            lb.getLeaderboardEntries('MaxScore', { quantityTop: 10, includeUser: true, quantityAround: 3 })
+                .then(res => {
+		            myGameInstance.SendMessage('YandexManager', 'BoardEntriesReady', JSON.stringify(res));
+                });
+            });
+    },
     GetLang : function (){
 	    var lang = ysdk.environment.i18n.lang;
 	    var bufferSize = lengthBytesUTF8(lang) + 1;

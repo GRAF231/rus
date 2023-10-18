@@ -88,7 +88,7 @@ public class Spawner : MonoBehaviour
         {
             level = (int)Managers.GameTime / 15;
         }
-        else if (_playerStat.Level < 30)
+        else if (_playerStat.Level < 25)
         {
             level = (int)Managers.GameTime / 10;
         }
