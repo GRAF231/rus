@@ -58,6 +58,7 @@ public class UI_MainMenu : UI_Scene
     {
 #if !UNITY_EDITOR
         YandexManager.GiveMePlayerData();
+        YandexManager.GetLeaderBoard();
 #endif
         Managers.Sound.Play("Select", Define.Sound.Effect);
         Debug.Log("Show!");

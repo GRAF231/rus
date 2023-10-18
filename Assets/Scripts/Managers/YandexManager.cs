@@ -120,7 +120,6 @@ public class YandexManager : MonoBehaviour
             DontDestroyOnLoad(go);
             s_instance = go.GetComponent<YandexManager>();
         }
-        GetLeaderBoard();
         string lang = GetLang();
 
         if (lang == "ru")
